@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 8302799746716604634}
   speed: 250
+  starSound: {fileID: 8300000, guid: eec6538d66a6cb147863b1a0bc60a7c6, type: 3}
 --- !u!1 &8302799746716604634
 GameObject:
   m_ObjectHideFlags: 0

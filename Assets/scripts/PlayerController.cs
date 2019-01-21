@@ -9,10 +9,14 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
 
+    public AudioClip starSound;
+
     // Start is called before the first frame update
     void Start()
     {
         RotationRoutine();
+
+        SoundsRoutine();
     }
 
     void RotationRoutine()
@@ -22,5 +26,14 @@ public class PlayerController : MonoBehaviour
             body.transform.Rotate(speed * Vector3.right * Time.deltaTime);
         });
 
+    }
+
+    void SoundsRoutine()
+    {
+        this.tt().Add(1, (ttHandler handler) => {
+
+            SoundManager.Get.PlayClip(starSound, false);
+
+        }).Repeat();
     }
 }
