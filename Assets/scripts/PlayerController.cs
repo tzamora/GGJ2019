@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     void SoundsRoutine()
     {
-        this.tt().Add(1, (ttHandler handler) => {
+        this.tt().Add(2, (ttHandler handler) => {
 
             SoundManager.Get.PlayClip(starSound, false);
 
