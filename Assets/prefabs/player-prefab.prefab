@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   update: 1
-  useKeyboard: 1
+  useKeyboard: 0
   forceActiveDevice: 1
   inputDeviceOrder: 0
 --- !u!1 &8302799746716604634

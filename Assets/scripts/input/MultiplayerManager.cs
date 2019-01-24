@@ -25,13 +25,14 @@ public class MultiplayerManager : MonoBehaviour
 
 	void Start()
 	{
-		// When a new usb device is detected, the controls are reassigned
+        // When a new usb device is detected, the controls are reassigned
 		// for the players without devices
 		this.tt("RefreshDevices").Add(1, () =>
 		{
-			if (InputManager.Devices.Count != deviceCount)
+            if (InputManager.Devices.Count != deviceCount)
 			{
-				deviceCount = InputManager.Devices.Count;
+                print("RefreshDevices");
+                deviceCount = InputManager.Devices.Count;
 				AssignFreeDevicesToFreePlayers();
 			}
 		})
@@ -73,8 +74,9 @@ public class MultiplayerManager : MonoBehaviour
 	// Assign free devices to free players.
 	void AssignFreeDevicesToFreePlayers()
 	{
-		// Queries
-		playersWithoutDevice = 
+        print("AssignFreeDevicesToFreePlayers");
+        // Queries
+        playersWithoutDevice = 
 			players.Where(p => !p.useKeyboard && (p.inputDevice == null || !InputManager.Devices.Contains (p.inputDevice) )).ToList();
 		
 		busyDevices = players.Where(p => p.inputDevice != null).Select(d => d.inputDevice).ToList();
@@ -96,7 +98,8 @@ public class MultiplayerManager : MonoBehaviour
 			}
 
 			playersWithoutDevice[i].gameObject.SetActive(true);
-			playersWithoutDevice[i].SetInputDevice(freeDevices[i], i);
+            print("hijueputa! el mae llegara aca?");
+            playersWithoutDevice[i].SetInputDevice(freeDevices[i], i);
 		}
 	}
 }
