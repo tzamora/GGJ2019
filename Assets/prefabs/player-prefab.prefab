@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4968685809587242743}
   - component: {fileID: 6092443514530063474}
+  - component: {fileID: 3248151051030092904}
   m_Layer: 0
   m_Name: player-prefab
   m_TagString: Untagged
@@ -47,6 +48,23 @@ MonoBehaviour:
   body: {fileID: 8302799746716604634}
   speed: 250
   starSound: {fileID: 8300000, guid: eec6538d66a6cb147863b1a0bc60a7c6, type: 3}
+  gamePlayerInput: {fileID: 3248151051030092904}
+--- !u!114 &3248151051030092904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905511984961051519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0d84bb94598964e8fd4687fa7a485c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  update: 1
+  useKeyboard: 1
+  forceActiveDevice: 1
+  inputDeviceOrder: 0
 --- !u!1 &8302799746716604634
 GameObject:
   m_ObjectHideFlags: 0

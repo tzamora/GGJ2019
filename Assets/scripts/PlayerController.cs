@@ -12,12 +12,16 @@ public class PlayerController : MonoBehaviour
 
     public AudioClip starSound;
 
-    GameInputActions gameInputActions; 
+    public GamePlayerInput gamePlayerInput;
+
+    private GameInputActions actions;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameInputBinding();
+        //GameInputBinding();
+
+        actions = gamePlayerInput.actions;
 
         InputRoutine();
 
@@ -28,33 +32,31 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (gameInputActions.attack.WasPressed)
+        if (gamePlayerInput.actions.attack.WasPressed)
         {
             print("botonzaso");
         }
     }
 
-    void GameInputBinding()
-    {
-        gameInputActions = new GameInputActions();
+    //void GameInputBinding()
+    //{
+    //    gameInputActions = new GameInputActions();
 
-        gameInputActions.Left.AddDefaultBinding(Key.LeftArrow);
-        gameInputActions.Left.AddDefaultBinding(InputControlType.DPadLeft);
+    //    gameInputActions.Left.AddDefaultBinding(Key.LeftArrow);
+    //    gameInputActions.Left.AddDefaultBinding(InputControlType.DPadLeft);
 
-        gameInputActions.Right.AddDefaultBinding(Key.RightArrow);
-        gameInputActions.Right.AddDefaultBinding(InputControlType.DPadRight);
+    //    gameInputActions.Right.AddDefaultBinding(Key.RightArrow);
+    //    gameInputActions.Right.AddDefaultBinding(InputControlType.DPadRight);
 
-        gameInputActions.attack.AddDefaultBinding(Key.Space);
-        gameInputActions.attack.AddDefaultBinding(InputControlType.Action1);
-    }
+    //    gameInputActions.attack.AddDefaultBinding(Key.Space);
+    //    gameInputActions.attack.AddDefaultBinding(InputControlType.Action1);
+    //}
 
     void InputRoutine() {
 
         this.tt().Loop((ttHandler handler) => {
 
-            var inputDevice = InputManager.ActiveDevice;
-            //print(inputDevice.LeftStickX);
-            body.transform.Rotate(speed * Vector3.right * Time.deltaTime * inputDevice.LeftStickX);
+            body.transform.Rotate(speed * Vector3.right * Time.deltaTime);
 
 
         });

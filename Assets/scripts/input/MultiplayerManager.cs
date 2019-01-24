@@ -11,7 +11,7 @@ using InControl;
 
 
 
-public class MultiplayerInControl : MonoBehaviour
+public class MultiplayerManager : MonoBehaviour
 {
 	public List<GamePlayerInput> players = null; // Players list
 	public int deviceCount = 0; // Current controls connected
@@ -38,31 +38,32 @@ public class MultiplayerInControl : MonoBehaviour
 		.Repeat();
 
 
-		// On 'Space' or 'Enter', a free tank will be activated for the
-		// keyboard.
-		this.tt("KeyboardPlayerDetection").Loop((ttHandler t) =>
-		{
-			if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter))
-			{
-				keyboardPlayer = players.Where(
-				                     p => p.inputDevice == null ||
-				                     !InputManager.Devices.Contains(p.inputDevice)).FirstOrDefault();
+        // On 'Space' or 'Enter', a free tank will be activated for the
+        // keyboard.
+        this.tt("KeyboardPlayerDetection").Loop((ttHandler t) =>
+        {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                keyboardPlayer = players.Where(
+                                     p => p.inputDevice == null ||
+                                     !InputManager.Devices.Contains(p.inputDevice)).FirstOrDefault();
 
 
-				// If there is a free lion
-				if (keyboardPlayer != null)
-				{
-					keyboardPlayer.gameObject.SetActive(true);
+                // If there is a free lion
+                if (keyboardPlayer != null)
+                {
+                    keyboardPlayer.gameObject.SetActive(true);
 
-					keyboardPlayer.useKeyboard = true;
-					keyboardPlayer.forceActiveDevice = true;
-					keyboardPlayer.SetInputDevice(null, -1);
+                    keyboardPlayer.useKeyboard = true;
+                    keyboardPlayer.forceActiveDevice = true;
+                    keyboardPlayer.SetInputDevice(null, -1);
 
-					AssignFreeDevicesToFreePlayers();
-				}
-			}
-		})
-		.Wait();
+                    AssignFreeDevicesToFreePlayers();
+                }
+            }
+        });
+        
+        //.Wait();
 		
 		// Look for all the compatible players, except the active device
 		players = FindObjectsOfType<GamePlayerInput>().ToList();

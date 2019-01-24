@@ -82,11 +82,8 @@ public class GamePlayerInput : MonoBehaviour
 			inputDevice = newInputDevice;
 			inputDeviceOrder = order;
 
-			// Debug.Log(newInputDevice.GetHashCode());
-			// Debug.Log(order);
 		}
 	}
-
 
 	void QuickInputTest()
 	{
