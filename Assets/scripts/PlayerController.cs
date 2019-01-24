@@ -6,6 +6,8 @@ using InControl;
 
 public class PlayerController : MonoBehaviour
 {
+    public string playerName;
+
     public GameObject body;
 
     public float speed;
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         if (gamePlayerInput.actions.attack.WasPressed)
         {
-            print("botonzaso");
+            print("Action from: " + playerName);
         }
     }
 
