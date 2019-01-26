@@ -6,6 +6,12 @@ public class RespawnSystem : MonoBehaviour
 {
     public RespawnSignal[] players;
 
+    [ContextMenu("Setup")]
+    void Setup()
+    {
+        players = FindObjectsOfType<RespawnSignal>();
+    }
+
     void Update()
     {
         for (int i = 0; i < players.Length; i++)
@@ -14,7 +20,7 @@ public class RespawnSystem : MonoBehaviour
             if (player.isReadyToSpawn)
             {
                 player.isReadyToSpawn = false;
-                player.transform.position = Vector3.zero;
+                player.transform.position = transform.position;
             }
         }
     }
