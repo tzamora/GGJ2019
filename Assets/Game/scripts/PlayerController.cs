@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Settings")]
     public string playerName;
+    public int playerIndex;
 
     public GameObject body;
 
@@ -110,6 +111,6 @@ public class PlayerController : MonoBehaviour
 
     public void PushBack ()
     {
-        rbody.AddForce(-transform.forward * pushBackPower);
+        rbody.AddForce(-body.transform.forward * pushBackPower, ForceMode.Impulse);
     }
 }
