@@ -31,7 +31,6 @@ public class MultiplayerManager : MonoBehaviour
 		{
             if (InputManager.Devices.Count != deviceCount)
 			{
-                print("RefreshDevices");
                 deviceCount = InputManager.Devices.Count;
 				AssignFreeDevicesToFreePlayers();
 			}
@@ -98,7 +97,7 @@ public class MultiplayerManager : MonoBehaviour
 			}
 
 			playersWithoutDevice[i].gameObject.SetActive(true);
-            print("hijueputa! el mae llegara aca?");
+            
             playersWithoutDevice[i].SetInputDevice(freeDevices[i], i);
 		}
 	}
