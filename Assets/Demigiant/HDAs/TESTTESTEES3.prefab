@@ -1,0 +1,225 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7087318952610369782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4790653050527125924}
+  - component: {fileID: 9049707523598713327}
+  m_Layer: 0
+  m_Name: HDA_Data
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4790653050527125924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7087318952610369782}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7629385155434600990}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9049707523598713327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7087318952610369782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740823ef63d3f6d468aaab5799b16654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _assetType: 1
+  _assetInfo:
+    nodeId: 24
+    objectNodeId: 4
+    hasEverCooked: 1
+    nameSH: 1724
+    labelSH: 1759
+    filePathSH: 1820
+    versionSH: 1842
+    fullOpNameSH: 784
+    helpTextSH: 837
+    objectCount: -1
+    handleCount: 0
+    transformInputCount: 0
+    geoInputCount: 1
+    geoOutputCount: 1
+    haveObjectsChanged: 0
+    haveMaterialsChanged: 0
+  _nodeInfo:
+    id: 24
+    parentId: 4
+    nameSH: 49
+    type: 2
+    isValid: 1
+    totalCookCount: 1
+    uniqueHoudiniNodeId: 563
+    internalNodePathSH: 24
+    parmCount: 1
+    parmIntValueCount: 0
+    parmFloatValueCount: 1
+    parmStringValueCount: 0
+    parmChoiceCount: 0
+    childNodeCount: 6
+    inputCount: 1
+    outputCount: 1
+    createdPostAssetLoad: 1
+    isTimeDependent: 0
+  _assetName: TESTTESTEES3
+  _assetOpName: Sop/TESTTESTEES
+  _assetHelp: 
+  _assetID: 24
+  _assetPath: C:/Users/Usuario/Desktop/GGJ2019/hda/TESTTESTEES.hdalc
+  _assetFileObject: {fileID: 0}
+  _objectNodes:
+  - {fileID: 0}
+  _rootGameObject: {fileID: 8181684112982982437}
+  _materialCache: []
+  _parameters: {fileID: 0}
+  _lastSyncedTransformMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  _assetCacheFolderPath: 
+  _subassetNames:
+  - Sop/TESTTESTEES
+  _selectedSubassetIndex: 0
+  _requestBuildAction: 0
+  _checkParameterChangeForCook: 0
+  _skipCookCheck: 0
+  _uploadParameters: 1
+  _cookStatus: 0
+  _lastCookResult: 0
+  _isCookingAssetReloaded: 0
+  _sessionID: 1585063344
+  _uiLocked: 1
+  _showInstanceInputs: 1
+  _showHDAOptions: 0
+  _showGenerateSection: 1
+  _showBakeSection: 1
+  _showEventsSection: 0
+  _showCurvesSection: 0
+  _showInputNodesSection: 1
+  _showToolsSection: 0
+  _showTerrainSection: 0
+  _reloadEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HoudiniEngineUnity.ReloadEvent, Assembly-CSharp-firstpass, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  _cookedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HoudiniEngineUnity.CookedEvent, Assembly-CSharp-firstpass, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  _bakedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HoudiniEngineUnity.BakedEvent, Assembly-CSharp-firstpass, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  _downstreamConnectionCookedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HoudiniEngineUnity.CookedEvent, Assembly-CSharp-firstpass, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  _generateUVs: 0
+  _generateTangents: 1
+  _generateNormals: 1
+  _pushTransformToHoudini: 1
+  _transformChangeTriggersCooks: 0
+  _cookingTriggersDownCooks: 1
+  _autoCookOnParameterChange: 1
+  _ignoreNonDisplayNodes: 0
+  _generateMeshUsingPoints: 0
+  _useLODGroups: 1
+  _curveEditorEnabled: 1
+  _curves: []
+  _curveDrawCollision: 0
+  _curveDrawColliders: []
+  _curveDrawLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _curveProjectMaxDistance: 1000
+  _curveProjectDirection: {x: 0, y: -1, z: 0}
+  _inputNodes:
+  - {fileID: 0}
+  _handles: []
+  _handlesEnabled: 1
+  _volumeCaches: []
+  _attributeStores: []
+  _editableNodesToolsEnabled: 0
+  _toolsInfo: {fileID: 0}
+--- !u!1 &8181684112982982437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7629385155434600990}
+  - component: {fileID: 4936033358752839698}
+  m_Layer: 0
+  m_Name: TESTTESTEES3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7629385155434600990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8181684112982982437}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4790653050527125924}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4936033358752839698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8181684112982982437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d22482c65bf0a248a742275874c35f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _houdiniAsset: {fileID: 9049707523598713327}
+  _bakeTargets: []
