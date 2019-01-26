@@ -8,9 +8,13 @@ public class TriggerTeleport : MonoBehaviour
 
     private void OnTriggerEnter (Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            other.transform.position = pointToGo.position;
+            PlayerController controller = other.GetComponent<PlayerController>();
+            if(Vector3.Dot((transform.position - controller.body.transform.position).normalized, controller.body.transform.position) >=0 )
+            {
+                other.transform.position = pointToGo.position;
+            }
         }
     }
 }
