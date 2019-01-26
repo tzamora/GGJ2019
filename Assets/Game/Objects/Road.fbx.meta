@@ -43,13 +43,18 @@ ModelImporter:
     100074: piece42
     100076: piece43
     100078: piece44
-    100080: piece5
-    100082: piece6
-    100084: piece7
-    100086: piece8
-    100088: piece9
-    100090: //RootNode
-    100092: TRANSFORM_NODE
+    100080: piece45
+    100082: piece46
+    100084: piece47
+    100086: piece48
+    100088: piece49
+    100090: piece5
+    100092: piece6
+    100094: piece7
+    100096: piece8
+    100098: piece9
+    100100: //RootNode
+    100102: TRANSFORM_NODE
     400000: piece0
     400002: piece1
     400004: piece10
@@ -90,13 +95,18 @@ ModelImporter:
     400074: piece42
     400076: piece43
     400078: piece44
-    400080: piece5
-    400082: piece6
-    400084: piece7
-    400086: piece8
-    400088: piece9
-    400090: //RootNode
-    400092: TRANSFORM_NODE
+    400080: piece45
+    400082: piece46
+    400084: piece47
+    400086: piece48
+    400088: piece49
+    400090: piece5
+    400092: piece6
+    400094: piece7
+    400096: piece8
+    400098: piece9
+    400100: //RootNode
+    400102: TRANSFORM_NODE
     2100000: No Name
     2300000: piece0
     2300002: piece1
@@ -138,11 +148,16 @@ ModelImporter:
     2300074: piece42
     2300076: piece43
     2300078: piece44
-    2300080: piece5
-    2300082: piece6
-    2300084: piece7
-    2300086: piece8
-    2300088: piece9
+    2300080: piece45
+    2300082: piece46
+    2300084: piece47
+    2300086: piece48
+    2300088: piece49
+    2300090: piece5
+    2300092: piece6
+    2300094: piece7
+    2300096: piece8
+    2300098: piece9
     3300000: piece0
     3300002: piece1
     3300004: piece10
@@ -183,11 +198,16 @@ ModelImporter:
     3300074: piece42
     3300076: piece43
     3300078: piece44
-    3300080: piece5
-    3300082: piece6
-    3300084: piece7
-    3300086: piece8
-    3300088: piece9
+    3300080: piece45
+    3300082: piece46
+    3300084: piece47
+    3300086: piece48
+    3300088: piece49
+    3300090: piece5
+    3300092: piece6
+    3300094: piece7
+    3300096: piece8
+    3300098: piece9
     4300000: piece0
     4300002: piece1
     4300004: piece2
@@ -233,6 +253,61 @@ ModelImporter:
     4300084: piece42
     4300086: piece43
     4300088: piece44
+    4300090: piece45
+    4300092: piece46
+    4300094: piece47
+    4300096: piece48
+    4300098: piece49
+    6400000: piece0
+    6400002: piece1
+    6400004: piece10
+    6400006: piece11
+    6400008: piece12
+    6400010: piece13
+    6400012: piece14
+    6400014: piece15
+    6400016: piece16
+    6400018: piece17
+    6400020: piece18
+    6400022: piece19
+    6400024: piece2
+    6400026: piece20
+    6400028: piece21
+    6400030: piece22
+    6400032: piece23
+    6400034: piece24
+    6400036: piece25
+    6400038: piece26
+    6400040: piece27
+    6400042: piece28
+    6400044: piece29
+    6400046: piece3
+    6400048: piece30
+    6400050: piece31
+    6400052: piece32
+    6400054: piece33
+    6400056: piece34
+    6400058: piece35
+    6400060: piece36
+    6400062: piece37
+    6400064: piece38
+    6400066: piece39
+    6400068: piece4
+    6400070: piece40
+    6400072: piece41
+    6400074: piece42
+    6400076: piece43
+    6400078: piece44
+    6400080: piece45
+    6400082: piece46
+    6400084: piece47
+    6400086: piece48
+    6400088: piece49
+    6400090: piece5
+    6400092: piece6
+    6400094: piece7
+    6400096: piece8
+    6400098: piece9
     7400000: Main
     9500000: //RootNode
   externalObjects: {}
@@ -268,7 +343,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
