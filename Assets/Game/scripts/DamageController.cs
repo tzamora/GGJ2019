@@ -9,13 +9,6 @@ public class DamageController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bodyCollider.OnEnter += (Collider collider) =>
-        {
-            var player = bodyCollider.gameObject.GetComponent<PlayerController>();
-            if (player)
-            {
-                player.KillPlayerRoutine();
-            }
-        };
+        
     }
 }
