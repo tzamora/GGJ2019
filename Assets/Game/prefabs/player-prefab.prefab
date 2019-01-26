@@ -50,14 +50,13 @@ MonoBehaviour:
   playerName: Chespirito
   playerIndex: 0
   body: {fileID: 8302799746716604634}
-  walkSpeed: 5
-  runSpeed: 10
+  walkSpeed: 10
+  runSpeed: 15
   turnSpeed: 50
-  pushBackPower: 250
+  pushBackPower: 50
   starSound: {fileID: 8300000, guid: eec6538d66a6cb147863b1a0bc60a7c6, type: 3}
   gamePlayerInput: {fileID: 3248151051030092904}
   rbody: {fileID: 7191233301198931673}
-  bodyCollider: {fileID: 0}
   isRunning: 0
 --- !u!114 &3248151051030092904
 MonoBehaviour:
@@ -121,7 +120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5631306854841177074
 Transform:
   m_ObjectHideFlags: 0
