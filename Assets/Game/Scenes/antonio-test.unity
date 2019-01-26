@@ -198,15 +198,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6572994992725111807, guid: 795fb6106ff4c3644be6a239000dfebe,
-        type: 3}
-      propertyPath: isInside
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7925804593325177410, guid: 795fb6106ff4c3644be6a239000dfebe,
         type: 3}
       propertyPath: m_Name
       value: mineral-prefab (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572994992725111807, guid: 795fb6106ff4c3644be6a239000dfebe,
+        type: 3}
+      propertyPath: isInside
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7925804593325177411, guid: 795fb6106ff4c3644be6a239000dfebe,
         type: 3}
@@ -373,15 +373,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6572994992725111807, guid: 795fb6106ff4c3644be6a239000dfebe,
-        type: 3}
-      propertyPath: isInside
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7925804593325177410, guid: 795fb6106ff4c3644be6a239000dfebe,
         type: 3}
       propertyPath: m_Name
       value: mineral-prefab (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572994992725111807, guid: 795fb6106ff4c3644be6a239000dfebe,
+        type: 3}
+      propertyPath: isInside
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7925804593325177411, guid: 795fb6106ff4c3644be6a239000dfebe,
         type: 3}
@@ -487,6 +487,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3248151051030092904, guid: a5b0f05549293324fb38786f44a22ac9,
+        type: 3}
+      propertyPath: forceActiveDevice
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4968685809587242743, guid: a5b0f05549293324fb38786f44a22ac9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -551,11 +556,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: body3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3248151051030092904, guid: a5b0f05549293324fb38786f44a22ac9,
-        type: 3}
-      propertyPath: forceActiveDevice
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b0f05549293324fb38786f44a22ac9, type: 3}
@@ -804,7 +804,7 @@ PrefabInstance:
     - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.37
+      value: -10.3
       objectReference: {fileID: 0}
     - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
         type: 3}
@@ -856,6 +856,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2703534440542834934, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5775162011020ef499112353ea8b1932, type: 3}
 --- !u!1001 &1457379799
@@ -865,15 +870,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6572994992725111807, guid: 795fb6106ff4c3644be6a239000dfebe,
-        type: 3}
-      propertyPath: isInside
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7925804593325177410, guid: 795fb6106ff4c3644be6a239000dfebe,
         type: 3}
       propertyPath: m_Name
       value: mineral-prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572994992725111807, guid: 795fb6106ff4c3644be6a239000dfebe,
+        type: 3}
+      propertyPath: isInside
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7925804593325177411, guid: 795fb6106ff4c3644be6a239000dfebe,
         type: 3}
@@ -1021,6 +1026,80 @@ PrefabInstance:
       objectReference: {fileID: 723458868}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0d40269e7f3bda4384c0d170a399e63, type: 3}
+--- !u!1001 &1688727467
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2703534440061762640, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_Name
+      value: turret-prefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703534440061762642, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703534440542834934, guid: 5775162011020ef499112353ea8b1932,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5775162011020ef499112353ea8b1932, type: 3}
 --- !u!1001 &1690936691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1028,15 +1107,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6572994992725111807, guid: 795fb6106ff4c3644be6a239000dfebe,
-        type: 3}
-      propertyPath: isInside
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7925804593325177410, guid: 795fb6106ff4c3644be6a239000dfebe,
         type: 3}
       propertyPath: m_Name
       value: mineral-prefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572994992725111807, guid: 795fb6106ff4c3644be6a239000dfebe,
+        type: 3}
+      propertyPath: isInside
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7925804593325177411, guid: 795fb6106ff4c3644be6a239000dfebe,
         type: 3}
@@ -1112,15 +1191,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6572994992725111807, guid: 795fb6106ff4c3644be6a239000dfebe,
-        type: 3}
-      propertyPath: isInside
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7925804593325177410, guid: 795fb6106ff4c3644be6a239000dfebe,
         type: 3}
       propertyPath: m_Name
       value: mineral-prefab (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572994992725111807, guid: 795fb6106ff4c3644be6a239000dfebe,
+        type: 3}
+      propertyPath: isInside
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7925804593325177411, guid: 795fb6106ff4c3644be6a239000dfebe,
         type: 3}
@@ -1196,15 +1275,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6572994992725111807, guid: 795fb6106ff4c3644be6a239000dfebe,
-        type: 3}
-      propertyPath: isInside
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7925804593325177410, guid: 795fb6106ff4c3644be6a239000dfebe,
         type: 3}
       propertyPath: m_Name
       value: mineral-prefab (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572994992725111807, guid: 795fb6106ff4c3644be6a239000dfebe,
+        type: 3}
+      propertyPath: isInside
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7925804593325177411, guid: 795fb6106ff4c3644be6a239000dfebe,
         type: 3}
@@ -1298,7 +1377,7 @@ PrefabInstance:
     - target: {fileID: 6947252038145800715, guid: dfc16bfcb2726974e81af93f53a05337,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.92
+      value: -6.21
       objectReference: {fileID: 0}
     - target: {fileID: 6947252038145800715, guid: dfc16bfcb2726974e81af93f53a05337,
         type: 3}
@@ -1344,6 +1423,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947252039036741371, guid: dfc16bfcb2726974e81af93f53a05337,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947252039036741371, guid: dfc16bfcb2726974e81af93f53a05337,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.20529938
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947252039036741371, guid: dfc16bfcb2726974e81af93f53a05337,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 0.97660816
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947252039036741371, guid: dfc16bfcb2726974e81af93f53a05337,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfc16bfcb2726974e81af93f53a05337, type: 3}
