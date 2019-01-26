@@ -93,7 +93,10 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayerRoutine() {
         print("player dead");
-        Destroy(gameObject);
+        this.body.GetComponent<Renderer>().enabled = false;
+
+
+        //Destroy(gameObject);
     }
 
     public void Recolect(int amount) {
