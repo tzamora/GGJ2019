@@ -11,9 +11,15 @@ public class TriggerTeleport : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerController controller = other.GetComponent<PlayerController>();
-            if(Vector3.Dot((transform.position - controller.body.transform.position).normalized, controller.body.transform.position) >=0 )
+            Debug.Log(Vector3.Dot((transform.position - controller.body.transform.position).normalized, controller.body.transform.position));
+            if (Vector3.Dot((transform.position - controller.body.transform.position).normalized, controller.body.transform.position) < 0 )
             {
                 other.transform.position = pointToGo.position;
+                other.transform.SetParent(pointToGo);
+            }
+            else
+            {
+                other.transform.SetParent(null);
             }
         }
     }

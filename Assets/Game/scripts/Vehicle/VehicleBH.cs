@@ -75,6 +75,7 @@ public class VehicleBH : MonoBehaviour
             (ttHandler t) => 
             {
                 transform.position = Vector3.Lerp(transform.position, waypoints[currentWaypoint].position, t.deltaTime);
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((transform.position - waypoints[currentWaypoint].position)), t.deltaTime);
             });
         }
         else

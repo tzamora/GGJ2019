@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public GamePlayerInput gamePlayerInput;
     public Rigidbody rbody;
     private GameInputActions actions;
-    private Camera mainCam;
+    public Camera mainCam;
 
     [Header("Data")]
     public bool isRunning;
@@ -93,7 +93,10 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayerRoutine() {
         print("player dead");
-        Destroy(gameObject);
+        this.body.GetComponent<Renderer>().enabled = false;
+
+
+        //Destroy(gameObject);
     }
 
     public void Recolect(int amount) {

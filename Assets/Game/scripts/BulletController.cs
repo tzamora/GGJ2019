@@ -6,14 +6,20 @@ public class BulletController : MonoBehaviour
 {
     public Rigidbody bodyRigidbody;
 
-    public int power;
+    public TriggerController bodyCollider;
 
-    // Start is called before the first frame update
-    public void shoot(Vector3 heading) {
-        bodyRigidbody.velocity = heading * power;
-    }
+    private void Start()
+    {
+        bodyCollider.OnCollision = (Collision collision) =>
+        {
+            var player = collision.gameObject.GetComponent<PlayerController>();
 
-    void bulletController() {
-        
+            if (player != null)
+            {
+                player.KillPlayerRoutine();
+                Destroy(gameObject);
+            }
+
+        };
     }
 }
