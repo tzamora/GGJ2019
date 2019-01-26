@@ -19,11 +19,6 @@ public class TurretController : MonoBehaviour
         ShootRoutine();
     }
 
-    void Update()
-    {
-        
-    }
-
     void ShootRoutine()
     {
         this.tt().Add(0.3f, (ttHandler handler) => {
