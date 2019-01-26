@@ -7,26 +7,27 @@ public class MineralController : MonoBehaviour
     [Header("Settings")]
     public int amount;
 
-    public bool isInside;
+    public AudioClip recolectSound;
 
     public TriggerController bodyCollider;
 
     // Start is called before the first frame update
     void Update()
     {
-        if (bodyCollider.isColliding && isInside) {
+        if (bodyCollider.isColliding) {
 
-            // isInside = true;
-            // print("entrando");
+            foreach (var collider in bodyCollider.others) {
 
-            var player = bodyCollider.gameObject.GetComponent<PlayerController>();
-            // no tiene un player controller 
-            // print(player);
-            
-            if (player && player.gamePlayerInput.actions.attack.WasPressed) {
-                print("botonazo");
-                player.Recolect(amount);
-                Destroy(gameObject);
+                var player = collider.gameObject.GetComponent<PlayerController>();
+                
+                if (player && player.gamePlayerInput.actions.attack.WasPressed)
+                {
+                    print("botonazo");
+                    player.Recolect(amount);
+                    Destroy(gameObject);
+                    SoundManager.Get.PlayClip(recolectSound, false);
+                }
+
             }
         }
     }

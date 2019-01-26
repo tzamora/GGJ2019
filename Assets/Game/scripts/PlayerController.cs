@@ -41,27 +41,19 @@ public class PlayerController : MonoBehaviour
     {
         //GameInputBinding();
         actions = gamePlayerInput.actions;
-
-        bodyCollider.OnEnter += (Collider collider) =>
-        {
-            var damage = collider.gameObject.GetComponent<DamageController>();
-            if (damage)
-            {
-                KillPlayerRoutine();
-            }
-        };
     }
 
     private void Update()
     {
 
+        if (gamePlayerInput.actions.attack.WasPressed) {
+            print("button A");
+        }
+
         horizontal = gamePlayerInput.Movement.x;
         vertical = gamePlayerInput.Movement.y;
-        //horizontal = Input.GetAxis("Horizontal");
-        //vertical = Input.GetAxis("Vertical");
 
         speedModifier = isRunning ? runSpeed : walkSpeed;
-
     }
 
     private void FixedUpdate()
