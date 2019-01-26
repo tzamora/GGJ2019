@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     private GameInputActions actions;
 
+    public TriggerController bodyCollider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +32,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        print(gamePlayerInput.Movement.x);
-        print(gamePlayerInput.Movement.y);
+        //print(gamePlayerInput.Movement.x);
+        //print(gamePlayerInput.Movement.y);
+
+        if (bodyCollider.isColliding) {
+            print("colisionando");
+        }
+
     }
 
     void Update()
