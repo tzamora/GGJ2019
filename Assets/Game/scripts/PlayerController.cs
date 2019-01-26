@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public GamePlayerInput gamePlayerInput;
     public Rigidbody rbody;
     private GameInputActions actions;
-    private Camera mainCam;
+    public Camera mainCam;
 
     [Header("Data")]
     public bool isRunning;
