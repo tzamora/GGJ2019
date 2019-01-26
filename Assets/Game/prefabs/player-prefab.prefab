@@ -46,9 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Chespirito
+  playerIndex: 0
   body: {fileID: 8302799746716604634}
-  walkSpeed: 2
-  runSpeed: 3
+  walkSpeed: 5
+  runSpeed: 10
+  turnSpeed: 50
+  pushBackPower: 250
   starSound: {fileID: 8300000, guid: eec6538d66a6cb147863b1a0bc60a7c6, type: 3}
   gamePlayerInput: {fileID: 3248151051030092904}
   rbody: {fileID: 5145108665766901742}
@@ -86,7 +89,7 @@ GameObject:
   - component: {fileID: 6162648771132066319}
   m_Layer: 0
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,7 +180,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &6162648771132066319
 MonoBehaviour:
