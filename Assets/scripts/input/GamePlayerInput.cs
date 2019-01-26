@@ -53,7 +53,13 @@ public class GamePlayerInput : MonoBehaviour
 			actions.Right.AddDefaultBinding(Key.D);
 			actions.Right.AddDefaultBinding(Key.RightArrow);
 
-			actions.attack.AddDefaultBinding(Key.Space);
+            actions.Up.AddDefaultBinding(Key.W);
+            actions.Up.AddDefaultBinding(Key.UpArrow);
+
+            actions.Down.AddDefaultBinding(Key.S);
+            actions.Down.AddDefaultBinding(Key.DownArrow);
+
+            actions.attack.AddDefaultBinding(Key.Space);
 
 		}
 		else

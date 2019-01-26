@@ -25,53 +25,22 @@ public class PlayerController : MonoBehaviour
 
         actions = gamePlayerInput.actions;
 
-        InputRoutine();
-
-        RotationRoutine();
-
         SoundsRoutine();
+    }
+
+    private void FixedUpdate()
+    {
+        print(gamePlayerInput.Movement.x);
+        print(gamePlayerInput.Movement.y);
     }
 
     void Update()
     {
-        if (gamePlayerInput.actions.attack.WasPressed)
+        if (gamePlayerInput.actions.attack.IsPressed)
         {
             print("Action from: " + playerName);
-        }
-    }
-
-    //void GameInputBinding()
-    //{
-    //    gameInputActions = new GameInputActions();
-
-    //    gameInputActions.Left.AddDefaultBinding(Key.LeftArrow);
-    //    gameInputActions.Left.AddDefaultBinding(InputControlType.DPadLeft);
-
-    //    gameInputActions.Right.AddDefaultBinding(Key.RightArrow);
-    //    gameInputActions.Right.AddDefaultBinding(InputControlType.DPadRight);
-
-    //    gameInputActions.attack.AddDefaultBinding(Key.Space);
-    //    gameInputActions.attack.AddDefaultBinding(InputControlType.Action1);
-    //}
-
-    void InputRoutine() {
-
-        this.tt().Loop((ttHandler handler) => {
-
             body.transform.Rotate(speed * Vector3.right * Time.deltaTime);
-
-
-        });
-
-    }
-
-    void RotationRoutine()
-    {
-
-        //this.tt().Loop((ttHandler handler) => {
-        //    body.transform.Rotate(speed * Vector3.right * Time.deltaTime);
-        //});
-
+        }
     }
 
     void SoundsRoutine()
