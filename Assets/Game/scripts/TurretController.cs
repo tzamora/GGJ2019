@@ -10,6 +10,8 @@ public class TurretController : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+    public AudioClip shootSound;
+
     public int power;
     
     void Start()
@@ -47,6 +49,8 @@ public class TurretController : MonoBehaviour
                         var heading = (collider.transform.position - bullet.transform.position).normalized;
 
                         bulletInstance.bodyRigidbody.velocity = heading * power;
+
+                        SoundManager.Get.PlayClip(shootSound, false);
                     }
                     
                 }
