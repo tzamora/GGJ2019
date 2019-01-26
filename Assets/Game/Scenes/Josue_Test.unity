@@ -276,7 +276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &450085806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 376089660}
   - {fileID: 486446189}
-  amountPlayersInside: 4
+  amountPlayersInside: 2
   rbody: {fileID: 0}
   isMoving: 0
   resources: 100
@@ -789,7 +789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 450085806}
 --- !u!65 &1965577969
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -55,10 +55,10 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
 
-        //horizontal = gamePlayerInput.Movement.x;
-        //vertical = gamePlayerInput.Movement.y;
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+        horizontal = gamePlayerInput.Movement.x;
+        vertical = gamePlayerInput.Movement.y;
+        //horizontal = Input.GetAxis("Horizontal");
+        //vertical = Input.GetAxis("Vertical");
 
         speedModifier = isRunning ? runSpeed : walkSpeed;
 
