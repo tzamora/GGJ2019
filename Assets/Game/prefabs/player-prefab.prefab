@@ -50,8 +50,8 @@ MonoBehaviour:
   playerName: Chespirito
   playerIndex: 0
   body: {fileID: 8302799746716604634}
-  walkSpeed: 5
-  runSpeed: 10
+  walkSpeed: 10
+  runSpeed: 15
   turnSpeed: 50
   pushBackPower: 50
   starSound: {fileID: 8300000, guid: eec6538d66a6cb147863b1a0bc60a7c6, type: 3}

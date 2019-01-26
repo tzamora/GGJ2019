@@ -13,9 +13,19 @@ public class TriggerController : MonoBehaviour {
 
 	public Action<Collider> OnExit;
 
-	public List<Collider> others = null;
+    public Action<Collision> OnCollision;
 
-	void OnTriggerEnter(Collider theOther) {
+    public List<Collider> others = null;
+
+    void OnCollisionEnter(Collision collision)
+    {
+        print("collision");
+        if (OnCollision!=null) {
+            OnCollision(collision);
+        }
+    }
+
+    void OnTriggerEnter(Collider theOther) {
 
 		isColliding = true;
 

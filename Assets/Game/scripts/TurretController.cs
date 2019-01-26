@@ -14,7 +14,7 @@ public class TurretController : MonoBehaviour
     
     void Start()
     {
-        
+        ShootRoutine();
     }
 
     void Update()
@@ -24,29 +24,33 @@ public class TurretController : MonoBehaviour
 
     void ShootRoutine()
     {
-        this.tt().Loop((ttHandler handler) => {
+        this.tt().Add(0.3f, (ttHandler handler) => {
 
             if (bodyCollider.isColliding)
             {
-                var colliders =
-                    bodyCollider.others.OrderBy(item => Vector3.Distance(this.transform.position, item.transform.position)).ToList();
 
-                var target = colliders.First();
-
-                if (target)
+                foreach (var collider in bodyCollider.others)
                 {
-                    var heading = target.transform.position - transform.position;
+                    if (collider == null)
+                    {
+                        continue;
+                    }
 
-                    var bullet = GameObject.Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
+                    var player = collider.GetComponent<PlayerController>();
 
-                    BulletController bulletInstance = bullet.GetComponent<BulletController>();
+                    if (player != null) {
 
-                    bulletInstance.shoot(heading);
+                        var bullet = GameObject.Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
+
+                        BulletController bulletInstance = bullet.GetComponent<BulletController>();
+
+                        var heading = (collider.transform.position - bullet.transform.position).normalized;
+
+                        bulletInstance.bodyRigidbody.velocity = heading * power;
+                    }
+                    
                 }
             }
-
-            handler.Wait(1000);
-
-        });
+        }).Repeat();
     }
 }
