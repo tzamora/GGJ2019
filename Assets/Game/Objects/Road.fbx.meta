@@ -258,6 +258,56 @@ ModelImporter:
     4300094: piece47
     4300096: piece48
     4300098: piece49
+    6400000: piece0
+    6400002: piece1
+    6400004: piece10
+    6400006: piece11
+    6400008: piece12
+    6400010: piece13
+    6400012: piece14
+    6400014: piece15
+    6400016: piece16
+    6400018: piece17
+    6400020: piece18
+    6400022: piece19
+    6400024: piece2
+    6400026: piece20
+    6400028: piece21
+    6400030: piece22
+    6400032: piece23
+    6400034: piece24
+    6400036: piece25
+    6400038: piece26
+    6400040: piece27
+    6400042: piece28
+    6400044: piece29
+    6400046: piece3
+    6400048: piece30
+    6400050: piece31
+    6400052: piece32
+    6400054: piece33
+    6400056: piece34
+    6400058: piece35
+    6400060: piece36
+    6400062: piece37
+    6400064: piece38
+    6400066: piece39
+    6400068: piece4
+    6400070: piece40
+    6400072: piece41
+    6400074: piece42
+    6400076: piece43
+    6400078: piece44
+    6400080: piece45
+    6400082: piece46
+    6400084: piece47
+    6400086: piece48
+    6400088: piece49
+    6400090: piece5
+    6400092: piece6
+    6400094: piece7
+    6400096: piece8
+    6400098: piece9
     7400000: Main
     9500000: //RootNode
   externalObjects: {}
@@ -293,7 +343,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
