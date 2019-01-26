@@ -22,7 +22,6 @@ public class MineralController : MonoBehaviour
                 
                 if (player && player.gamePlayerInput.actions.attack.WasPressed)
                 {
-                    print("botonazo");
                     player.Recolect(amount);
                     Destroy(gameObject);
                     SoundManager.Get.PlayClip(recolectSound, false);
