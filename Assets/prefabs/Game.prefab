@@ -75,10 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3f18baa3147d04dacf7c50bdf351a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  players: []
   deviceCount: 0
   playersWithoutDevice: []
   keyboardPlayer: {fileID: 0}
