@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4968685809587242743}
   - component: {fileID: 6092443514530063474}
   - component: {fileID: 3248151051030092904}
-  - component: {fileID: 7320497634929242138}
   m_Layer: 0
   m_Name: player-prefab
   m_TagString: Untagged
@@ -52,7 +51,8 @@ MonoBehaviour:
   runSpeed: 3
   starSound: {fileID: 8300000, guid: eec6538d66a6cb147863b1a0bc60a7c6, type: 3}
   gamePlayerInput: {fileID: 3248151051030092904}
-  rbody: {fileID: 7320497634929242138}
+  rbody: {fileID: 5145108665766901742}
+  bodyCollider: {fileID: 6162648771132066319}
   isRunning: 0
 --- !u!114 &3248151051030092904
 MonoBehaviour:
@@ -70,22 +70,6 @@ MonoBehaviour:
   useKeyboard: 0
   forceActiveDevice: 1
   inputDeviceOrder: 0
---- !u!54 &7320497634929242138
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4905511984961051519}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!1 &8302799746716604634
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,9 +81,11 @@ GameObject:
   - component: {fileID: 5631306854841177074}
   - component: {fileID: 1784918465898639337}
   - component: {fileID: 3885074689808946132}
-  - component: {fileID: 1870323288904568559}
+  - component: {fileID: 323411910685908163}
+  - component: {fileID: 5145108665766901742}
+  - component: {fileID: 6162648771132066319}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +150,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1870323288904568559
+--- !u!65 &323411910685908163
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,3 +163,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5145108665766901742
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302799746716604634}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6162648771132066319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302799746716604634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f83c460f7c33434aaf8108e47e75283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isColliding: 0
+  isEmpty: 0
+  others: []
