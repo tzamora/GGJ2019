@@ -289,11 +289,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577aa2161bbe2d14ba973dcb6a37a8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDuration: 20
+  moveDurationFour: 20
+  moveDurationThree: 50
   distanceBetweenPoints: 10
   waypoints:
   - {fileID: 376089660}
   - {fileID: 486446189}
+  amountPlayersInside: 4
   rbody: {fileID: 0}
   isMoving: 0
   resources: 100

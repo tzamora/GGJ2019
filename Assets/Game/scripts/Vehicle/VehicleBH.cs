@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+using matnesis.TeaTime;
 
 public class VehicleBH : MonoBehaviour
 {
     [Header("Settings")]
-    public float moveDuration = 1;
+    public float moveDurationFour = 5;
+    public float moveDurationThree = 10;
     public float distanceBetweenPoints = 10;
     public Transform [] waypoints;
+    public int amountPlayersInside = 4;
 
     [Header("Data")]
     public Rigidbody rbody;
@@ -17,12 +19,30 @@ public class VehicleBH : MonoBehaviour
     public bool isMoving;
     public float resources = 100;
 
-    private int currentWaypoint;
+    private int currentWaypoint, lastAmountPlayers = 4;
     private bool paused;
 
     private void Start ()
     {
         MoveNextWaypoint();
+
+        this.tt("CheckForPlayers").Add(0.1f, () =>
+        {
+            if(amountPlayersInside < 3)
+            {
+                this.tt("@MovingHouse").Stop();
+                lastAmountPlayers = amountPlayersInside;
+            }
+            else
+            {
+                if(lastAmountPlayers != amountPlayersInside)
+                {
+                    this.tt("@MovingHouse").Stop();
+                    lastAmountPlayers = amountPlayersInside;
+                }
+                this.tt("@MovingHouse").Play();
+            }
+        }).Repeat();
     }
 
     private void Update ()
@@ -32,16 +52,17 @@ public class VehicleBH : MonoBehaviour
             MoveNextWaypoint();
         }
 
-        if(resources < 80)
-        {
-            transform.DOPause();
-            paused = true;
-        }
-        else if(paused)
-        {
-            transform.DOPlay();
-            paused = false;
-        }
+        //if(resources < 80 || amountPlayersInside < 3)
+        //{
+        //    transform.DOPause();
+        //    paused = true;
+        //}
+        //else if(paused)
+        //{
+        //    if(amountPlayersInside == 3) transform.DOMove(waypoints[currentWaypoint].position, moveDurationThree);
+        //    else if(amountPlayersInside == 4) transform.DOMove(waypoints[currentWaypoint].position, moveDurationFour);
+        //    paused = false;
+        //}
     }
 
     private void MoveNextWaypoint ()
@@ -50,7 +71,11 @@ public class VehicleBH : MonoBehaviour
         {
             currentWaypoint++;
             isMoving = true;
-            transform.DOMove(waypoints[currentWaypoint].position, moveDuration);
+            this.tt("@MovingHouse").Reset().Loop(() => { return amountPlayersInside == 3 ? moveDurationThree : moveDurationFour; },
+            (ttHandler t) => 
+            {
+                transform.position = Vector3.Lerp(transform.position, waypoints[currentWaypoint].position, t.deltaTime);
+            });
         }
         else
         {
