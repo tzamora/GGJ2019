@@ -28,5 +28,8 @@ MonoBehaviour:
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
-  RpcList: []
-  DisableAutoOpenWizard: 0
+  RpcList:
+  - DestroySpaceship
+  - Fire
+  - RespawnSpaceship
+  DisableAutoOpenWizard: 1
