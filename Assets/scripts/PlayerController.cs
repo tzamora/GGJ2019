@@ -6,41 +6,54 @@ using InControl;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Settings")]
     public string playerName;
 
     public GameObject body;
 
-    public float speed;
+    public float walkSpeed = 2;
+    public float runSpeed = 3;
+    
+    [Header("References")]
 
     public AudioClip starSound;
 
     public GamePlayerInput gamePlayerInput;
 
+    public Rigidbody rbody;
+
     private GameInputActions actions;
+    
+    [Header("Data")]
+    public bool isRunning;
+    private float horizontal, vertical;
+    private Vector3 direction;
+    private float speedModifier;
 
     // Start is called before the first frame update
     void Start()
     {
         //GameInputBinding();
-
         actions = gamePlayerInput.actions;
+    }
 
-        SoundsRoutine();
+    private void Update()
+    {
+        horizontal = gamePlayerInput.Movement.x;
+        vertical = gamePlayerInput.Movement.y;
+
+        speedModifier = isRunning ? runSpeed : walkSpeed;
     }
 
     private void FixedUpdate()
     {
-        print(gamePlayerInput.Movement.x);
-        print(gamePlayerInput.Movement.y);
-    }
+        direction.x = horizontal;
+        direction.z = vertical;
 
-    void Update()
-    {
-        if (gamePlayerInput.actions.attack.IsPressed)
-        {
-            print("Action from: " + playerName);
-            body.transform.Rotate(speed * Vector3.right * Time.deltaTime);
-        }
+        direction *= speedModifier;
+        direction.y = rbody.velocity.y;
+
+        rbody.velocity = direction;
     }
 
     void SoundsRoutine()
