@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     public GamePlayerInput gamePlayerInput;
     public Rigidbody rbody;
     private GameInputActions actions;
-    public TriggerController bodyCollider;
     private Camera mainCam;
 
     [Header("Data")]
