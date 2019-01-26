@@ -232,7 +232,7 @@ MonoBehaviour:
   bodyCollider: {fileID: 2703534440542834932}
   bulletPrefab: {fileID: 6947252038145800714, guid: dfc16bfcb2726974e81af93f53a05337,
     type: 3}
-  power: 1000
+  power: 10
 --- !u!1 &2703534440542834938
 GameObject:
   m_ObjectHideFlags: 0
