@@ -7,6 +7,10 @@ public class PlayerRoom : MonoBehaviour
     public int playerIndex;
     public VehicleBH vehicle;
 
+    // dividve speed by player ammount 
+    // if one speed is 1/4 or 1/3
+    // if four speed is 4/4
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
