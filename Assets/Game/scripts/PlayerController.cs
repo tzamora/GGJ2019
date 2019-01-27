@@ -90,7 +90,6 @@ public class PlayerController : MonoBehaviour {
 		
 			SoundManager.Get.PlayClip (starSound, true);
 			walkingOnce = true;
-			print("this is runnning");
 
 		} else if (speed < 1  && walkingOnce) {
 		
