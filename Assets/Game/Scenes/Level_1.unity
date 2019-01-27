@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.57481724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -604,7 +604,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429124722}
-  m_LocalRotation: {x: -0.42917287, y: 0.00000022034092, z: -0.000000049343836, w: -0.9032224}
+  m_LocalRotation: {x: -0.42917287, y: 0.00000022033272, z: -0.00000004933987, w: -0.9032224}
   m_LocalPosition: {x: -35.713497, y: 8.2, z: 32.875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -931,6 +931,8 @@ MonoBehaviour:
   - {fileID: 7696891824081050655}
   amountPlayersInside: 2
   reduceResourcesSpeed: 5
+  runningSound: {fileID: 8300000, guid: 8817cc84357ae02489c44ff9602a2e73, type: 3}
+  idleSound: {fileID: 8300000, guid: 965a2f24ce5827b418d6bd8b222c40ec, type: 3}
   rbody: {fileID: 0}
   isMoving: 0
   resources: 100
@@ -1536,7 +1538,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958278791}
-  m_LocalRotation: {x: -0.42917287, y: 0.00000022034092, z: -0.000000049343836, w: -0.9032224}
+  m_LocalRotation: {x: -0.42917287, y: 0.00000022033272, z: -0.00000004933987, w: -0.9032224}
   m_LocalPosition: {x: -35.71349, y: 25.259275, z: 6.9539022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1599,6 +1601,8 @@ MonoBehaviour:
   - {fileID: 0}
   amountPlayersInside: 0
   reduceResourcesSpeed: 5
+  runningSound: {fileID: 0}
+  idleSound: {fileID: 0}
   rbody: {fileID: 0}
   isMoving: 0
   resources: 100
@@ -1982,6 +1986,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.y
       value: 1.0201774
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248151051030092904, guid: a5b0f05549293324fb38786f44a22ac9,
+        type: 3}
+      propertyPath: useKeyboard
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8123586921156593591, guid: a5b0f05549293324fb38786f44a22ac9, type: 3}
