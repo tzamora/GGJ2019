@@ -18,6 +18,8 @@ public class HouseController : MonoBehaviour
     public Transform floor;
     public HouseFuelShow fuelEnergy;
 
+    public List<GameObject> wheels;
+
     public Rigidbody houseRigidBody;
 
     public int playerAmount;
@@ -27,6 +29,13 @@ public class HouseController : MonoBehaviour
         if (isMoving)
         {
             houseRigidBody.velocity = new Vector3(speed, houseRigidBody.velocity.y, 0f);
+
+            foreach (var wheel in wheels)
+            {
+
+                wheel.gameObject.transform.Rotate(Vector3.forward, 100 * Time.deltaTime);
+
+            }
         }
         else {
             houseRigidBody.velocity = new Vector3(0, houseRigidBody.velocity.y, 0);
@@ -37,6 +46,16 @@ public class HouseController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //this.tt("movewheels").Loop((ttHandler handler)=> {
+
+        //    foreach (var wheel in wheels) {
+
+        //        wheel.gameObject.transform.Rotate(Vector3.left, 100 * Time.deltaTime);
+
+        //    }
+
+        //}).Pause();
+
         MoveRoutine();
         
         houseCamera.enabled = false;
