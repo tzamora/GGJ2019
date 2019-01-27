@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using matnesis.TeaTime;
 
 public class EnemyController : MonoBehaviour
 {
@@ -16,33 +17,58 @@ public class EnemyController : MonoBehaviour
     public Rigidbody rbody;
     private Camera mainCam;
     private Vector3 cameraFoward;
+    private float horizontal, vertical;
+    public Vector3 playerDirection;
+
+
+    public TriggerController sensorTrigger;
 
     private void Start()
     {
-        Wandering();
+        WanderingRoutine();
 
-        speedModifier = runSpeed;
+        sensorTrigger.OnExit += (Collider collider) => {
+
+            this.tt("WanderingRoutine").Play();
+        }; 
+
     }
 
     private void Update()
     {
-        
+        speedModifier = runSpeed;
     }
 
     private void FixedUpdate()
     {
-        direction.x = 0.5f;
-        direction.z = 0.5f;
 
-        print("hijueputa");
+        if (sensorTrigger.isColliding) {
 
-        // Follow camera forward axis as base direction
-        //if (mainCam != null)
-        //{
-        //    print("este codigo nunca se llama");
-        //    cameraFoward = Vector3.Scale(mainCam.transform.forward, new Vector3(1, 0, 1)).normalized;
-        //    direction = direction.z * cameraFoward + direction.x * mainCam.transform.right;
-        //}
+            foreach (var collider in sensorTrigger.others) {
+
+                if (collider != null) {
+
+                    var player = collider.gameObject.GetComponent<PlayerController>();
+
+                    if (player != null)
+                    {
+                        playerDirection = (player.transform.position - transform.position).normalized;
+
+                        this.tt("WanderingRoutine").Pause();
+                        
+                        horizontal = playerDirection.x;
+
+                        vertical = playerDirection.z;
+                    }
+
+                }
+
+            }
+
+        }
+        
+        direction.x = horizontal;
+        direction.z = vertical;
 
         // If moving
         if (direction.x != 0 || direction.z != 0)
@@ -56,27 +82,54 @@ public class EnemyController : MonoBehaviour
         direction *= speedModifier;
         direction.y = rbody.velocity.y;
 
-        print(direction);
-
         rbody.velocity = direction;
     }
 
-    void Wandering()
+    void WanderingRoutine()
     {
         //
         // wander around space
         //
 
+        this.tt("WanderingRoutine").Add(2, () =>
+        {
+
+            horizontal = 0;
+            vertical = 1;
+
+        }).Add(2, () =>
+        {
+            horizontal = -1;
+            vertical = Random.Range(-1f, 1f);
+
+        }).Add(Random.Range(0f, 3f), () =>
+        {
+
+            horizontal = 0;
+            vertical = -1;
+
+        }).Add(2, () =>
+        {
+
+            horizontal = Random.Range(-1f, 1f);
+            vertical = 0;
+
+        }).Repeat();
+
     }
 
-    void SeekAndDestroy()
+    void FollowPlayerRoutine()
     {
-
+        
     }
 
     void AttackRoutine() {
 
+        this.tt().Add(3f, (ttHandler handler) => {
 
+            this.tt("WanderingRoutine").Play();
 
+        });
+        
     }
 }

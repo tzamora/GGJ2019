@@ -53,6 +53,9 @@ MonoBehaviour:
   runSpeed: 3
   turnSpeed: 50
   rbody: {fileID: 5718662436657822982}
+  playerDirection: {x: 0, y: 0, z: 0}
+  updateEnabled: 1
+  sensorTrigger: {fileID: 2906116303408890146}
 --- !u!33 &2147899765535225168
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -139,6 +142,7 @@ GameObject:
   - component: {fileID: 7976868605866182402}
   - component: {fileID: 4929226818404102087}
   - component: {fileID: 3040744667092668921}
+  - component: {fileID: 2906116303408890146}
   m_Layer: 0
   m_Name: wandering-area
   m_TagString: Untagged
@@ -218,3 +222,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2906116303408890146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4983965884468715257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f83c460f7c33434aaf8108e47e75283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isColliding: 0
+  isEmpty: 0
+  others: []
