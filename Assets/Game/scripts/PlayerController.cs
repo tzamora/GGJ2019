@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 50;
     public float pushBackPower = 250;
 
+    public float resourcesObtained;
+
     [Header("References")]
 
     public AudioClip starSound;
@@ -100,7 +102,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Recolect(int amount) {
-        print("Recolecting " + amount);
+        resourcesObtained += amount;
     }
 
     public void PushBack ()

@@ -11,6 +11,7 @@ public class VehicleBH : MonoBehaviour
     public float distanceBetweenPoints = 10;
     public Transform [] waypoints;
     public int amountPlayersInside = 4;
+    public float reduceResourcesSpeed = 1;
 
     [Header("Data")]
     public Rigidbody rbody;
@@ -32,6 +33,7 @@ public class VehicleBH : MonoBehaviour
             {
                 this.tt("@MovingHouse").Stop();
                 lastAmountPlayers = amountPlayersInside;
+                isMoving = false;
             }
             else
             {
@@ -41,6 +43,7 @@ public class VehicleBH : MonoBehaviour
                     lastAmountPlayers = amountPlayersInside;
                 }
                 this.tt("@MovingHouse").Play();
+                isMoving = true;
             }
         }).Repeat();
     }
@@ -52,6 +55,16 @@ public class VehicleBH : MonoBehaviour
             MoveNextWaypoint();
         }
 
+        if(isMoving)
+        {
+            resources -= Time.deltaTime * reduceResourcesSpeed;
+            resources = Mathf.Clamp(resources, 0, 100);
+        }
+        if (resources <= 0) isMoving = false;
+        if(!isMoving && resources > 0 && amountPlayersInside > 3)
+        {
+            this.tt("@MovingHouse").Play();
+        }
         //if(resources < 80 || amountPlayersInside < 3)
         //{
         //    transform.DOPause();
@@ -74,8 +87,8 @@ public class VehicleBH : MonoBehaviour
             this.tt("@MovingHouse").Reset().Loop(() => { return amountPlayersInside == 3 ? moveDurationThree : moveDurationFour; },
             (ttHandler t) => 
             {
-                transform.position = Vector3.Lerp(transform.position, waypoints[currentWaypoint].position, t.deltaTime);
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((transform.position - waypoints[currentWaypoint].position)), t.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, waypoints[currentWaypoint].position, t.deltaTime * (resources/100));
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation((transform.position - waypoints[currentWaypoint].position)), t.deltaTime * (resources / 100));
             });
         }
         else
