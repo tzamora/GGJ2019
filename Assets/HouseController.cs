@@ -10,12 +10,17 @@ public class HouseController : MonoBehaviour
     public TriggerController insideDoorTrigger;
     public Transform insideSpawnPoint;
     public Transform outsideSpawnPoint;
+    public GameObject houseRoof;
+
+    public Rigidbody houseRigidBody;
 
     public int playerAmount;
 
     // Start is called before the first frame update
     void Start()
     {
+        houseRigidBody.velocity = new Vector3(0f, 1f, 0f) * 100;
+
         houseCamera.enabled = false;
 
         outsideDoorTrigger.OnEnter += (Collider collider) => {
@@ -54,16 +59,13 @@ public class HouseController : MonoBehaviour
         {
             houseCamera.enabled = true;
             mainCamera.enabled = false;
+            houseRoof.SetActive(false);
         }
-        else {
+        else
+        {
             mainCamera.enabled = true;
             houseCamera.enabled = false;
+            houseRoof.SetActive(true);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
