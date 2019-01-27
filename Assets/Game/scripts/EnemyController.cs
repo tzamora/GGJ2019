@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using matnesis.TeaTime;
 
 public class EnemyController : MonoBehaviour
 {
@@ -16,25 +17,24 @@ public class EnemyController : MonoBehaviour
     public Rigidbody rbody;
     private Camera mainCam;
     private Vector3 cameraFoward;
+    private float horizontal, vertical;
+
+    public TriggerController sensorTrigger;
 
     private void Start()
     {
-        Wandering();
-
-        speedModifier = runSpeed;
+        WanderingRoutine();
     }
 
     private void Update()
     {
-        
+        speedModifier = runSpeed;
     }
 
     private void FixedUpdate()
     {
-        direction.x = 0.5f;
-        direction.z = 0.5f;
-
-        print("hijueputa");
+        direction.x = horizontal;
+        direction.z = vertical;
 
         // Follow camera forward axis as base direction
         //if (mainCam != null)
@@ -61,11 +61,36 @@ public class EnemyController : MonoBehaviour
         rbody.velocity = direction;
     }
 
-    void Wandering()
+    void WanderingRoutine()
     {
         //
         // wander around space
         //
+
+        this.tt("WanderingRoutine").Add(2, () =>
+        {
+
+            horizontal = 0;
+            vertical = 1;
+
+        }).Add(2, () =>
+        {
+            horizontal = -1;
+            vertical = Random.Range(-1f, 1f);
+
+        }).Add(Random.Range(0f, 3f), () =>
+        {
+
+            horizontal = 0;
+            vertical = -1;
+
+        }).Add(2, () =>
+        {
+
+            horizontal = Random.Range(-1f, 1f);
+            vertical = 0;
+
+        }).Repeat();
 
     }
 
@@ -75,8 +100,6 @@ public class EnemyController : MonoBehaviour
     }
 
     void AttackRoutine() {
-
-
-
+        
     }
 }
