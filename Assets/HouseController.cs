@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using matnesis.TeaTime;
 
 public class HouseController : MonoBehaviour
 {
@@ -10,12 +11,20 @@ public class HouseController : MonoBehaviour
     public TriggerController insideDoorTrigger;
     public Transform insideSpawnPoint;
     public Transform outsideSpawnPoint;
+    public GameObject houseRoof;
+    public float speed = 75;
+    public int fuel = 100;
+    public bool isMoving;
+
+    public Rigidbody houseRigidBody;
 
     public int playerAmount;
 
     // Start is called before the first frame update
     void Start()
     {
+        MoveRoutine();
+        
         houseCamera.enabled = false;
 
         outsideDoorTrigger.OnEnter += (Collider collider) => {
@@ -49,21 +58,50 @@ public class HouseController : MonoBehaviour
         };
     }
 
-    void changeCamera() {
-        if (playerAmount >= 2)
-        {
-            houseCamera.enabled = true;
-            mainCamera.enabled = false;
-        }
-        else {
-            mainCamera.enabled = true;
-            houseCamera.enabled = false;
-        }
+    void MoveRoutine() {
+
+        this.tt().Add(1, (ttHandler handler) => {
+
+            if (playerAmount > 0) {
+
+                if (fuel > 10)
+                {
+                    fuel -= 10;
+
+                    if (!isMoving && fuel > 10)
+                    {
+                        houseRigidBody.velocity = Vector3.right * speed;
+                        isMoving = true;
+                    }
+                    else
+                    {
+                        houseRigidBody.velocity = Vector3.zero;
+                        isMoving = false;
+                    }
+
+                }
+
+            }
+
+            
+        }).Repeat();
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void changeCamera() {
+        print("player amount " + playerAmount);
+
+        if (playerAmount > 0)
+        {
+            houseCamera.enabled = true;
+            //mainCamera.enabled = false;
+            houseRoof.SetActive(false);
+        }
+        else
+        {
+            mainCamera.enabled = true;
+            //houseCamera.enabled = false;
+            houseRoof.SetActive(true);
+        }
     }
 }
