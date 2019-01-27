@@ -87,6 +87,7 @@ ModelImporter:
     100162: terreno005
     100164: Tree
     100166: rocks001
+    100168: terrain
     400000: Arbol
     400002: Box001
     400004: Box002
@@ -171,6 +172,7 @@ ModelImporter:
     400162: terreno005
     400164: Tree
     400166: rocks001
+    400168: terrain
     2100000: musgo
     2100002: Verde
     2100004: planta
@@ -259,6 +261,7 @@ ModelImporter:
     2300158: terreno005
     2300160: //RootNode
     2300162: rocks001
+    2300164: terrain
     3300000: Box001
     3300002: Box002
     3300004: Box003
@@ -341,6 +344,7 @@ ModelImporter:
     3300158: terreno005
     3300160: //RootNode
     3300162: rocks001
+    3300164: terrain
     4300000: musgo
     4300002: Box086
     4300004: Box101
@@ -350,6 +354,7 @@ ModelImporter:
     4300012: Line003
     4300014: Box001
     4300016: rocks001
+    4300018: terrain
     6400000: musgo
     6400002: musgo008
     6400004: musgo009
