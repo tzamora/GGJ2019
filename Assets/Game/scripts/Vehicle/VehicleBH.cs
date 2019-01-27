@@ -13,6 +13,10 @@ public class VehicleBH : MonoBehaviour
     public int amountPlayersInside = 4;
     public float reduceResourcesSpeed = 1;
 
+	public AudioClip runningSound;
+	public AudioClip idleSound;
+
+	
     [Header("Data")]
     public Rigidbody rbody;
 
