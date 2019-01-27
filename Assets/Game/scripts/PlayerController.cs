@@ -21,16 +21,14 @@ public class PlayerController : MonoBehaviour {
     [Header ("References")]
     public int resourcesObtained;
 
-
-
     public AudioClip starSound;
     public GamePlayerInput gamePlayerInput;
     public Rigidbody rbody;
     private GameInputActions actions;
     public Camera mainCam;
 
-	bool walkingOnce = false;
-	
+    bool walkingOnce = false;
+
     [Header ("Data")]
     public bool isRunning;
     private float horizontal, vertical;
@@ -61,7 +59,6 @@ public class PlayerController : MonoBehaviour {
     private void FixedUpdate () {
         direction.x = horizontal;
         direction.z = vertical;
-        
 
         // Follow camera forward axis as base direction
         if (mainCam != null) {
@@ -71,35 +68,35 @@ public class PlayerController : MonoBehaviour {
 
         // If moving
         if (direction.x != 0 || direction.z != 0) {
-		
-				//SoundManager.Get.PlayClip (starSound, true);
-				
-				// print("X  " + direction.x + "  Y  " + direction.y);
+
+            //SoundManager.Get.PlayClip (starSound, true);
+
+            // print("X  " + direction.x + "  Y  " + direction.y);
             // Rotate character
             aimAngle = Mathf.Atan2 (direction.x, direction.z) * Mathf.Rad2Deg;
             aimRotation = Quaternion.AngleAxis (aimAngle, Vector3.up);
             body.transform.rotation = Quaternion.Slerp (body.transform.rotation, aimRotation, turnSpeed * Time.deltaTime);
-			
+
         }
-		
-		var vel = GetComponent<Rigidbody>().velocity;      //to get a Vector3 representation of the velocity
-		float speed = vel.magnitude;             
-		
-		// print (speed);
-		
-        if (speed > 1  && !walkingOnce) {
-		
-			SoundManager.Get.PlayClip (starSound, true);
-			walkingOnce = true;
 
-		} else if (speed < 1  && walkingOnce) {
-		
-			SoundManager.Get.StopClip (starSound);
-			walkingOnce = false;
-			print("this is ");
+        var vel = GetComponent<Rigidbody> ().velocity; //to get a Vector3 representation of the velocity
+        float speed = vel.magnitude;
 
-		}
+        // print (speed);
 
+        if (speed > 1 && !walkingOnce) {
+
+            SoundManager.Get.PlayClip (starSound, true);
+            SoundManager.Get.SetVolume (starSound, 0.25f);
+            walkingOnce = true;
+
+        } else if (speed < 1 && walkingOnce) {
+
+            SoundManager.Get.StopClip (starSound);
+            walkingOnce = false;
+            print ("this is ");
+
+        }
 
         direction *= speedModifier;
         direction.y = rbody.velocity.y;
@@ -115,12 +112,12 @@ public class PlayerController : MonoBehaviour {
         }).Repeat ();
     }
 
-    public void KillPlayerRoutine() {
-        print("player dead");
-        this.body.GetComponent<Renderer>().enabled = false;
+    public void KillPlayerRoutine () {
+        print ("player dead");
+        this.body.GetComponent<Renderer> ().enabled = false;
     }
 
-    public void Recolect(int amount) {
+    public void Recolect (int amount) {
         resourcesObtained += amount;
     }
 
