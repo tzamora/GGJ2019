@@ -19,13 +19,18 @@ public class EnemyController : MonoBehaviour
     private Vector3 cameraFoward;
     private float horizontal, vertical;
     public Vector3 playerDirection;
-    public bool updateEnabled = true;
+
 
     public TriggerController sensorTrigger;
 
     private void Start()
     {
         WanderingRoutine();
+
+        sensorTrigger.OnExit += (Collider collider) => {
+
+            this.tt("WanderingRoutine").Play();
+        }; 
 
     }
 
@@ -36,11 +41,6 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!updateEnabled) {
-            return;
-        }
-
-        print("tome");
 
         if (sensorTrigger.isColliding) {
 
@@ -54,15 +54,11 @@ public class EnemyController : MonoBehaviour
                     {
                         playerDirection = (player.transform.position - transform.position).normalized;
 
-                        this.tt("WanderingRoutine").Stop();
+                        this.tt("WanderingRoutine").Pause();
                         
                         horizontal = playerDirection.x;
 
                         vertical = playerDirection.z;
-
-                        print(playerDirection);
-
-
                     }
 
                 }
@@ -70,9 +66,7 @@ public class EnemyController : MonoBehaviour
             }
 
         }
-
-        print("llegamos aca");
-
+        
         direction.x = horizontal;
         direction.z = vertical;
 
@@ -130,6 +124,12 @@ public class EnemyController : MonoBehaviour
     }
 
     void AttackRoutine() {
+
+        this.tt().Add(3f, (ttHandler handler) => {
+
+            this.tt("WanderingRoutine").Play();
+
+        });
         
     }
 }
