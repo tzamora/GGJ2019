@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
     public int anxiousPoints = 30;
 
     [Header ("References")]
-    public float resourcesObtained;
+    public int resourcesObtained;
 
 
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using matnesis.TeaTime;
 
 public class HouseController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class HouseController : MonoBehaviour
     public Transform outsideSpawnPoint;
     public GameObject houseRoof;
     public float speed = 75;
+    public int fuel = 100;
+    public bool isMoving;
 
     public Rigidbody houseRigidBody;
 
@@ -20,8 +23,7 @@ public class HouseController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        houseRigidBody.velocity = Vector3.right * speed;
+        MoveRoutine();
         
         houseCamera.enabled = false;
 
@@ -56,19 +58,49 @@ public class HouseController : MonoBehaviour
         };
     }
 
+    void MoveRoutine() {
+
+        this.tt().Add(1, (ttHandler handler) => {
+
+            if (playerAmount > 0) {
+
+                if (fuel > 10)
+                {
+                    fuel -= 10;
+
+                    if (!isMoving && fuel > 10)
+                    {
+                        houseRigidBody.velocity = Vector3.right * speed;
+                        isMoving = true;
+                    }
+                    else
+                    {
+                        houseRigidBody.velocity = Vector3.zero;
+                        isMoving = false;
+                    }
+
+                }
+
+            }
+
+            
+        }).Repeat();
+
+    }
+
     void changeCamera() {
         print("player amount " + playerAmount);
 
         if (playerAmount > 0)
         {
             houseCamera.enabled = true;
-            mainCamera.enabled = false;
+            //mainCamera.enabled = false;
             houseRoof.SetActive(false);
         }
         else
         {
             mainCamera.enabled = true;
-            houseCamera.enabled = false;
+            //houseCamera.enabled = false;
             houseRoof.SetActive(true);
         }
     }
