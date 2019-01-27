@@ -50,7 +50,7 @@ public class MineralController : MonoBehaviour {
 
         GameObject theShape = Instantiate (Shapes[r],
             gameObject.transform.position, gameObject.transform.rotation);
-
+        theShape.transform.localScale = Vector3.one * .07f;
         theShape.name = "Obj";
         theShape.transform.SetParent (gameObject.transform);
 
