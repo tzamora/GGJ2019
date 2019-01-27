@@ -18,12 +18,15 @@ public class EnemyController : MonoBehaviour
     private Camera mainCam;
     private Vector3 cameraFoward;
     private float horizontal, vertical;
+    public Vector3 playerDirection;
+    public bool updateEnabled = true;
 
     public TriggerController sensorTrigger;
 
     private void Start()
     {
         WanderingRoutine();
+
     }
 
     private void Update()
@@ -33,16 +36,45 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!updateEnabled) {
+            return;
+        }
+
+        print("tome");
+
+        if (sensorTrigger.isColliding) {
+
+            foreach (var collider in sensorTrigger.others) {
+
+                if (collider != null) {
+
+                    var player = collider.gameObject.GetComponent<PlayerController>();
+
+                    if (player != null)
+                    {
+                        playerDirection = (player.transform.position - transform.position).normalized;
+
+                        this.tt("WanderingRoutine").Stop();
+                        
+                        horizontal = playerDirection.x;
+
+                        vertical = playerDirection.z;
+
+                        print(playerDirection);
+
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        print("llegamos aca");
+
         direction.x = horizontal;
         direction.z = vertical;
-
-        // Follow camera forward axis as base direction
-        //if (mainCam != null)
-        //{
-        //    print("este codigo nunca se llama");
-        //    cameraFoward = Vector3.Scale(mainCam.transform.forward, new Vector3(1, 0, 1)).normalized;
-        //    direction = direction.z * cameraFoward + direction.x * mainCam.transform.right;
-        //}
 
         // If moving
         if (direction.x != 0 || direction.z != 0)
@@ -55,8 +87,6 @@ public class EnemyController : MonoBehaviour
 
         direction *= speedModifier;
         direction.y = rbody.velocity.y;
-
-        print(direction);
 
         rbody.velocity = direction;
     }
@@ -94,9 +124,9 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    void SeekAndDestroy()
+    void FollowPlayerRoutine()
     {
-
+        
     }
 
     void AttackRoutine() {

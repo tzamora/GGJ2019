@@ -60,8 +60,6 @@ public class PlayerController : MonoBehaviour
         direction.x = horizontal;
         direction.z = vertical;
 
-        print(direction);
-
         // Follow camera forward axis as base direction
         if (mainCam != null)
         {
