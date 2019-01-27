@@ -17,7 +17,6 @@ public class PlayerRoom : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerController controller = other.GetComponentInParent<PlayerController>();
-            Debug.Log(controller);
 
             if (controller && controller.playerIndex != playerIndex)
             {

@@ -76,7 +76,11 @@ public class HouseController : MonoBehaviour
 
         this.tt().Add(1, (ttHandler handler) => {
 
-            if (playerAmount > 0) {
+            print("playerAmount");
+            print(playerAmount);
+
+            if (playerAmount > 0)
+            {
 
                 if (fuel > 10)
                 {
@@ -87,14 +91,17 @@ public class HouseController : MonoBehaviour
                         print("comenzando movimiento");
                         isMoving = true;
                     }
-                    
-                    if(fuel <= 9)
+
+                    if (fuel <= 9)
                     {
                         isMoving = false;
                     }
 
                 }
 
+            }
+            else {
+                isMoving = false;
             }
 
             
@@ -109,13 +116,13 @@ public class HouseController : MonoBehaviour
         {
             houseCamera.enabled = true;
             //mainCamera.enabled = false;
-            houseRoof.SetActive(false);
+            //houseRoof.SetActive(false);
         }
         else
         {
             mainCamera.enabled = true;
             //houseCamera.enabled = false;
-            houseRoof.SetActive(true);
+            //houseRoof.SetActive(true);
         }
     }
 }
