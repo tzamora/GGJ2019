@@ -90,12 +90,12 @@ public class PlayerController : MonoBehaviour {
 		
         if (speed > 1  && !walkingOnce) {
 		
-			SoundManager.Get.PlayClip (starSound, true);
+			//SoundManager.Get.PlayClip (starSound, true);
 			walkingOnce = true;
 
 		} else if (speed < 1  && walkingOnce) {
 		
-			SoundManager.Get.StopClip (starSound);
+			//SoundManager.Get.StopClip (starSound);
 			walkingOnce = false;    
 
 		}
