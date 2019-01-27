@@ -21,7 +21,7 @@ public class FadeCamera : MonoBehaviour
     {
         Reset();
     }
-
+     
     public void OnGUI()
     {
         if (_done) return;
