@@ -592,6 +592,22 @@ MonoBehaviour:
   isColliding: 0
   isEmpty: 0
   others: []
+--- !u!114 &6432583176517345239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8084825162000459231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0859d6ab4af81064384839040958895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFuelSize: 100
+  maxActualSize: 0.8
+  inputFuelValue: 0
+  energiaObject: {fileID: 0}
 --- !u!114 &7667274135264416880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,6 +651,7 @@ MonoBehaviour:
   insideDoorTrigger: {fileID: 7620057300153082522}
   insideSpawnPoint: {fileID: 5694144248450556321}
   outsideSpawnPoint: {fileID: 4196226485200283399}
+  playerAmount: 0
 --- !u!1 &8968035827118625751
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,15 +819,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff5ee8babaf89f343b230f025bf03381, type: 3}
---- !u!1 &8084825162000459231 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100020, guid: ff5ee8babaf89f343b230f025bf03381,
-    type: 3}
-  m_PrefabInstance: {fileID: 8084825162000425835}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8084825162000300543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400020, guid: ff5ee8babaf89f343b230f025bf03381,
+    type: 3}
+  m_PrefabInstance: {fileID: 8084825162000425835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8084825162000459231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100020, guid: ff5ee8babaf89f343b230f025bf03381,
     type: 3}
   m_PrefabInstance: {fileID: 8084825162000425835}
   m_PrefabAsset: {fileID: 0}

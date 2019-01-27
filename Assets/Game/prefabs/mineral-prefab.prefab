@@ -246,3 +246,15 @@ MonoBehaviour:
   amount: 5
   recolectSound: {fileID: 8300000, guid: 89ac1e93e4e8e09449d3bbcb72442abc, type: 3}
   bodyCollider: {fileID: 6792757928007399085}
+  glowSpeed: 2
+  sourceColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+  Shapes:
+  - {fileID: 100002, guid: 16f95ebcb6e377e449ed9a371c69fd62, type: 3}
+  - {fileID: 100004, guid: 16f95ebcb6e377e449ed9a371c69fd62, type: 3}
+  - {fileID: 100006, guid: 16f95ebcb6e377e449ed9a371c69fd62, type: 3}
+  - {fileID: 100008, guid: 16f95ebcb6e377e449ed9a371c69fd62, type: 3}
+  - {fileID: 100010, guid: 16f95ebcb6e377e449ed9a371c69fd62, type: 3}
+  - {fileID: 100012, guid: 16f95ebcb6e377e449ed9a371c69fd62, type: 3}
+  - {fileID: 3736229327853479119, guid: 23d8c69f51775ee46ad72baea8528520, type: 3}
+  - {fileID: 3736229327853479119, guid: 6aa931905f48b8a478c6ce483ec4e90b, type: 3}
+  - {fileID: 3736229327853479119, guid: 1631cb4149ba5a346993bf6761814239, type: 3}
