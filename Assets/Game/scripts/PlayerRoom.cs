@@ -24,6 +24,11 @@ public class PlayerRoom : MonoBehaviour
             else
             {
                 if (vehicle != null) vehicle.amountPlayersInside++;
+                if(controller.resourcesObtained > 0)
+                {
+                    vehicle.resources += controller.resourcesObtained;
+                    controller.resourcesObtained = 0;
+                }
             }
         }
     }
