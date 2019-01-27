@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
         direction.x = horizontal;
         direction.z = vertical;
 
+        print(direction);
+
         // Follow camera forward axis as base direction
         if (mainCam != null)
         {
@@ -94,9 +96,6 @@ public class PlayerController : MonoBehaviour
     public void KillPlayerRoutine() {
         print("player dead");
         this.body.GetComponent<Renderer>().enabled = false;
-
-
-        //Destroy(gameObject);
     }
 
     public void Recolect(int amount) {
