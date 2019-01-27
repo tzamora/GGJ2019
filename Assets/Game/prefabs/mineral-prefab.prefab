@@ -244,5 +244,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 5
-  recolectSound: {fileID: 8300000, guid: eec6538d66a6cb147863b1a0bc60a7c6, type: 3}
+  recolectSound: {fileID: 8300000, guid: 89ac1e93e4e8e09449d3bbcb72442abc, type: 3}
   bodyCollider: {fileID: 6792757928007399085}

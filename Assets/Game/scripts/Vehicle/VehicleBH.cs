@@ -16,7 +16,9 @@ public class VehicleBH : MonoBehaviour
 	public AudioClip runningSound;
 	public AudioClip idleSound;
 
-	
+	bool soundsA;
+	bool soundsB;
+
     [Header("Data")]
     public Rigidbody rbody;
 
