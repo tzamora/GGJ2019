@@ -1,13 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System;
-using UnityEngine;
-using matnesis.TeaTime;
 using InControl;
+using matnesis.TeaTime;
+using UnityEngine;
 
-public class PlayerController : MonoBehaviour
-{
-    [Header("Settings")]
+public class PlayerController : MonoBehaviour {
+    [Header ("Settings")]
     public string playerName;
     public int playerIndex;
 
@@ -17,10 +16,12 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 3;
     public float turnSpeed = 50;
     public float pushBackPower = 250;
+    public int anxiousPoints = 30;
 
+    [Header ("References")]
     public float resourcesObtained;
 
-    [Header("References")]
+
 
     public AudioClip starSound;
     public GamePlayerInput gamePlayerInput;
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private GameInputActions actions;
     public Camera mainCam;
 
-    [Header("Data")]
+    [Header ("Data")]
     public bool isRunning;
     private float horizontal, vertical;
     private Vector3 direction;
@@ -38,17 +39,15 @@ public class PlayerController : MonoBehaviour
     private Quaternion aimRotation;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start () {
         //GameInputBinding();
         actions = gamePlayerInput.actions;
     }
 
-    private void Update()
-    {
+    private void Update () {
 
         if (gamePlayerInput.actions.attack.WasPressed) {
-            print("button A");
+            print ("button A");
         }
 
         horizontal = gamePlayerInput.Movement.x;
@@ -57,25 +56,22 @@ public class PlayerController : MonoBehaviour
         speedModifier = isRunning ? runSpeed : walkSpeed;
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate () {
         direction.x = horizontal;
         direction.z = vertical;
 
         // Follow camera forward axis as base direction
-        if (mainCam != null)
-        {
-            cameraFoward = Vector3.Scale(mainCam.transform.forward, new Vector3(1, 0, 1)).normalized;
+        if (mainCam != null) {
+            cameraFoward = Vector3.Scale (mainCam.transform.forward, new Vector3 (1, 0, 1)).normalized;
             direction = direction.z * cameraFoward + direction.x * mainCam.transform.right;
         }
 
         // If moving
-        if (direction.x != 0 || direction.z != 0)
-        {
+        if (direction.x != 0 || direction.z != 0) {
             // Rotate character
-            aimAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-            aimRotation = Quaternion.AngleAxis(aimAngle, Vector3.up);
-            body.transform.rotation = Quaternion.Slerp(body.transform.rotation, aimRotation, turnSpeed * Time.deltaTime);
+            aimAngle = Mathf.Atan2 (direction.x, direction.z) * Mathf.Rad2Deg;
+            aimRotation = Quaternion.AngleAxis (aimAngle, Vector3.up);
+            body.transform.rotation = Quaternion.Slerp (body.transform.rotation, aimRotation, turnSpeed * Time.deltaTime);
         }
 
         direction *= speedModifier;
@@ -84,13 +80,12 @@ public class PlayerController : MonoBehaviour
         rbody.velocity = direction;
     }
 
-    void SoundsRoutine()
-    {
-        this.tt().Add(5, (ttHandler handler) => {
+    void SoundsRoutine () {
+        this.tt ().Add (5, (ttHandler handler) => {
 
-            SoundManager.Get.PlayClip(starSound, false);
+            SoundManager.Get.PlayClip (starSound, false);
 
-        }).Repeat();
+        }).Repeat ();
     }
 
     public void KillPlayerRoutine() {
@@ -102,8 +97,7 @@ public class PlayerController : MonoBehaviour
         resourcesObtained += amount;
     }
 
-    public void PushBack ()
-    {
-        rbody.AddForce(-body.transform.forward * pushBackPower, ForceMode.Impulse);
+    public void PushBack () {
+        rbody.AddForce (-body.transform.forward * pushBackPower, ForceMode.Impulse);
     }
 }
