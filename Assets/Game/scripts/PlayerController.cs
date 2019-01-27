@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour {
     private Vector3 cameraFoward;
     private float aimAngle;
     private Quaternion aimRotation;
+    public Rigidbody rBodyParent;
 
     // Start is called before the first frame update
     void Start () {
@@ -95,14 +96,19 @@ public class PlayerController : MonoBehaviour {
 		} else if (speed < 1  && walkingOnce) {
 		
 			SoundManager.Get.StopClip (starSound);
-			walkingOnce = false;
-			print("this is ");
+			walkingOnce = false;    
 
 		}
 
 
         direction *= speedModifier;
         direction.y = rbody.velocity.y;
+
+        if (rBodyParent != null) {
+
+            direction.x = direction.x  + rBodyParent.velocity.x;
+
+        }
 
         rbody.velocity = direction;
     }

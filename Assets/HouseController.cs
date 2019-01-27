@@ -14,11 +14,24 @@ public class HouseController : MonoBehaviour
     public GameObject houseRoof;
     public float speed = 75;
     public int fuel = 100;
-    public bool isMoving;
+    public bool isMoving = false;
+    public Transform floor;
 
     public Rigidbody houseRigidBody;
 
     public int playerAmount;
+
+    private void FixedUpdate()
+    {
+        if (isMoving)
+        {
+            houseRigidBody.velocity = new Vector3(speed, houseRigidBody.velocity.y, 0f);
+        }
+        else {
+            houseRigidBody.velocity = new Vector3(0, houseRigidBody.velocity.y, 0);
+        }
+        
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +47,8 @@ public class HouseController : MonoBehaviour
             if (player != null)
             {
                 player.transform.position = insideSpawnPoint.position;
-
+                player.rBodyParent = this.houseRigidBody;
+                
                 playerAmount++;
 
                 changeCamera();
@@ -49,7 +63,7 @@ public class HouseController : MonoBehaviour
             if (player != null)
             {
                 player.transform.position = outsideSpawnPoint.position;
-
+                player.rBodyParent = null;
                 playerAmount--;
 
                 changeCamera();
@@ -70,12 +84,12 @@ public class HouseController : MonoBehaviour
 
                     if (!isMoving && fuel > 10)
                     {
-                        houseRigidBody.velocity = Vector3.right * speed;
+                        print("comenzando movimiento");
                         isMoving = true;
                     }
-                    else
+                    
+                    if(fuel <= 9)
                     {
-                        houseRigidBody.velocity = Vector3.zero;
                         isMoving = false;
                     }
 
