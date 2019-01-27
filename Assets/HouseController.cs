@@ -11,6 +11,7 @@ public class HouseController : MonoBehaviour
     public Transform insideSpawnPoint;
     public Transform outsideSpawnPoint;
     public GameObject houseRoof;
+    public float speed = 75;
 
     public Rigidbody houseRigidBody;
 
@@ -19,8 +20,9 @@ public class HouseController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        houseRigidBody.velocity = new Vector3(0f, 1f, 0f) * 100;
 
+        houseRigidBody.velocity = Vector3.right * speed;
+        
         houseCamera.enabled = false;
 
         outsideDoorTrigger.OnEnter += (Collider collider) => {
@@ -55,7 +57,9 @@ public class HouseController : MonoBehaviour
     }
 
     void changeCamera() {
-        if (playerAmount >= 2)
+        print("player amount " + playerAmount);
+
+        if (playerAmount > 0)
         {
             houseCamera.enabled = true;
             mainCamera.enabled = false;

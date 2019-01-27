@@ -48,9 +48,9 @@ public class PlayerController : MonoBehaviour {
 
     private void Update () {
 
-        if (gamePlayerInput.actions.attack.WasPressed) {
-            print ("button A");
-        }
+        //if (gamePlayerInput.actions.attack.WasPressed) {
+        //    print ("button A");
+        //}
 
         horizontal = gamePlayerInput.Movement.x;
         vertical = gamePlayerInput.Movement.y;
@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour {
     private void FixedUpdate () {
         direction.x = horizontal;
         direction.z = vertical;
+        
 
         // Follow camera forward axis as base direction
         if (mainCam != null) {
