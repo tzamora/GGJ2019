@@ -95,8 +95,7 @@ public class PlayerController : MonoBehaviour {
 		} else if (speed < 1  && walkingOnce) {
 		
 			SoundManager.Get.StopClip (starSound);
-			walkingOnce = false;
-			print("this is ");
+			walkingOnce = false;    
 
 		}
 

@@ -1,5 +1,97 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1387903774766898906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6691533038605897535}
+  - component: {fileID: 7870887906479689962}
+  - component: {fileID: 5765758160087836599}
+  - component: {fileID: 2684306728545038973}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6691533038605897535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387903774766898906}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.9890003, y: 2.3, z: 2.2150006}
+  m_LocalScale: {x: 2.1305025, y: 1, z: 1.5837505}
+  m_Children: []
+  m_Father: {fileID: 8084825162000300543}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7870887906479689962
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387903774766898906}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &5765758160087836599
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387903774766898906}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!64 &2684306728545038973
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387903774766898906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1422074398351566542
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 2
   vehicle: {fileID: 0}
+  goodSound: {fileID: 0}
 --- !u!1 &4023365528033035460
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 3
   vehicle: {fileID: 0}
+  goodSound: {fileID: 0}
 --- !u!1 &6700642276098469813
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 1
   vehicle: {fileID: 0}
+  goodSound: {fileID: 0}
 --- !u!1 &7537061400733477095
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +843,8 @@ MonoBehaviour:
   outsideSpawnPoint: {fileID: 4196226485200283399}
   houseRoof: {fileID: 8084825162000459191}
   speed: 50
+  fuel: 100
+  isMoving: 0
   houseRigidBody: {fileID: 8622612458130289999}
   playerAmount: 0
 --- !u!1 &8968035827118625751
@@ -856,6 +953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 0
   vehicle: {fileID: 0}
+  goodSound: {fileID: 0}
 --- !u!1001 &8084825162000425835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -917,12 +1015,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff5ee8babaf89f343b230f025bf03381, type: 3}
---- !u!4 &8084825162000300543 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400020, guid: ff5ee8babaf89f343b230f025bf03381,
-    type: 3}
-  m_PrefabInstance: {fileID: 8084825162000425835}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8084825162000459231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100020, guid: ff5ee8babaf89f343b230f025bf03381,
@@ -932,6 +1024,12 @@ GameObject:
 --- !u!1 &8084825162000459191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100060, guid: ff5ee8babaf89f343b230f025bf03381,
+    type: 3}
+  m_PrefabInstance: {fileID: 8084825162000425835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8084825162000300543 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400020, guid: ff5ee8babaf89f343b230f025bf03381,
     type: 3}
   m_PrefabInstance: {fileID: 8084825162000425835}
   m_PrefabAsset: {fileID: 0}
