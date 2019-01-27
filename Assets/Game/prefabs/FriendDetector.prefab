@@ -125,9 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0a7fe643a1d20499e51c2e21581d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedA: 6
-  speedB: 3
-  speedC: 1
+  speedA: 10
+  speedB: 6
+  speedC: 3
   isActivated: 0
   FaceA: {fileID: 21300000, guid: 9c3269c84ebe28f40b12c708d6ead306, type: 3}
   FaceB: {fileID: 21300000, guid: 324525ae8f1ea9c44a90fe647db8f716, type: 3}
