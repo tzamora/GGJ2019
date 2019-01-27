@@ -31,7 +31,7 @@ public class NearCharacter : MonoBehaviour {
 			if (isActivated) {
 
 				if (sourceInfo.anxiousPoints < 30)
-					sourceInfo.anxiousPoints += 4;
+					sourceInfo.anxiousPoints += 5;
 
 				if (sourceInfo.anxiousPoints > 30)
 					sourceInfo.anxiousPoints = 30;
@@ -40,21 +40,21 @@ public class NearCharacter : MonoBehaviour {
 
 			if (sourceInfo.anxiousPoints > 0 &&
 				sourceInfo.anxiousPoints < 10) {
-				sourceInfo.walkSpeed = 0.75f;
+				sourceInfo.walkSpeed = speedC;
 				if (currentFace != 0) {
 					currentFace = 0;
 					face = true;
 				}
 			} else if (sourceInfo.anxiousPoints > 10 &&
 				sourceInfo.anxiousPoints < 20) {
-				sourceInfo.walkSpeed = 1.25f;
+				sourceInfo.walkSpeed = speedB;
 				if (currentFace != 1) {
 					currentFace = 1;
 					face = true;
 				}
 			} else if (sourceInfo.anxiousPoints > 20 &&
 				sourceInfo.anxiousPoints < 30) {
-				sourceInfo.walkSpeed = 2;
+				sourceInfo.walkSpeed = speedA;
 				if (currentFace != 2) {
 					currentFace = 2;
 					face = true;
