@@ -179,6 +179,36 @@ ModelImporter:
     4300054: TechoCasa
     4300056: BaseCasa
     4300058: Cylinder021
+    6400000: BaseCasa
+    6400002: Box066
+    6400004: Box075
+    6400006: Box076
+    6400008: Box077
+    6400010: Box086
+    6400012: Box090
+    6400014: Box091
+    6400016: Box092
+    6400018: Box093
+    6400020: Cone001
+    6400022: Cone003
+    6400024: Cone004
+    6400026: Cone005
+    6400028: Cylinder010
+    6400030: Cylinder011
+    6400032: Cylinder013
+    6400034: Cylinder015
+    6400036: Cylinder016
+    6400038: Cylinder021
+    6400040: Energia
+    6400042: Object018
+    6400044: Object022
+    6400046: Object024
+    6400048: Object025
+    6400050: Shape004
+    6400052: Shape008
+    6400054: Shape009
+    6400056: Shape010
+    6400058: TechoCasa
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -212,7 +242,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1

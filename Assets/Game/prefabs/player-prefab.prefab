@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6092443514530063474}
   - component: {fileID: 3248151051030092904}
   - component: {fileID: 7191233301198931673}
-  - component: {fileID: 8123586921156593591}
+  - component: {fileID: 8668352612337773621}
+  - component: {fileID: 7884799730553478981}
   m_Layer: 0
   m_Name: player-prefab
   m_TagString: Untagged
@@ -93,8 +94,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &8123586921156593591
-BoxCollider:
+--- !u!114 &8668352612337773621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905511984961051519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572edf7060d3919479bf02e8c6711b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isReadyToSpawn: 0
+--- !u!136 &7884799730553478981
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,8 +117,9 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
+  m_Height: 2.0844898
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4135616454772117805
 MonoBehaviour:

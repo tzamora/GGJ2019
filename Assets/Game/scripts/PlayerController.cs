@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour {
     public int anxiousPoints = 30;
 
     [Header ("References")]
+    public float resourcesObtained;
+
+
 
     public AudioClip starSound;
     public GamePlayerInput gamePlayerInput;
@@ -85,15 +88,13 @@ public class PlayerController : MonoBehaviour {
         }).Repeat ();
     }
 
-    public void KillPlayerRoutine () {
-        print ("player dead");
-        this.body.GetComponent<Renderer> ().enabled = false;
-
-        //Destroy(gameObject);
+    public void KillPlayerRoutine() {
+        print("player dead");
+        this.body.GetComponent<Renderer>().enabled = false;
     }
 
-    public void Recolect (int amount) {
-        print ("Recolecting " + amount);
+    public void Recolect(int amount) {
+        resourcesObtained += amount;
     }
 
     public void PushBack () {
