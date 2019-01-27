@@ -350,6 +350,11 @@ ModelImporter:
     4300012: Line003
     4300014: Box001
     4300016: rocks001
+    6400000: musgo
+    6400002: musgo008
+    6400004: musgo009
+    6400006: rocks001
+    6400008: terreno005
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -393,7 +398,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
