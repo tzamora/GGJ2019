@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using InControl;
 using matnesis.TeaTime;
 using UnityEngine;
+using Rewired;
 
 public class PlayerController : MonoBehaviour {
     [Header ("Settings")]
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour {
 
     [Header ("References")]
     public int resourcesObtained;
+    public Player playerRewired;
 
 
 
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour {
     void Start () {
         //GameInputBinding();
         actions = gamePlayerInput.actions;
+        playerRewired = ReInput.players.GetPlayer(playerIndex);
     }
 
     private void Update () {
@@ -53,8 +56,10 @@ public class PlayerController : MonoBehaviour {
         //    print ("button A");
         //}
 
-        horizontal = gamePlayerInput.Movement.x;
-        vertical = gamePlayerInput.Movement.y;
+        //horizontal = gamePlayerInput.Movement.x;
+        //vertical = gamePlayerInput.Movement.y;
+        horizontal = playerRewired.GetAxis("Horizontal");
+        vertical = playerRewired.GetAxis("Vertical");
 
         speedModifier = isRunning ? runSpeed : walkSpeed;
     }

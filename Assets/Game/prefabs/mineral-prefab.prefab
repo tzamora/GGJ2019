@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19c6fc31e2ece245bbd0b7298499b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 10
+  amount: 30
   recolectSound: {fileID: 8300000, guid: 89ac1e93e4e8e09449d3bbcb72442abc, type: 3}
   bodyCollider: {fileID: 6792757928007399085}
   glowSpeed: 2

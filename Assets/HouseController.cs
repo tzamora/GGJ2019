@@ -16,6 +16,7 @@ public class HouseController : MonoBehaviour
     public int fuel = 100;
     public bool isMoving = false;
     public Transform floor;
+    public HouseFuelShow fuelEnergy;
 
     public Rigidbody houseRigidBody;
 
@@ -98,6 +99,8 @@ public class HouseController : MonoBehaviour
                     }
 
                 }
+
+                fuelEnergy.inputFuelValue = fuel;
 
             }
             else {

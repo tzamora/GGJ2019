@@ -31,7 +31,7 @@ public class MineralController : MonoBehaviour {
 
                 var player = collider.gameObject.GetComponent<PlayerController> ();
 
-                if (player && player.gamePlayerInput.actions.attack.WasPressed) {
+                if (player && player.playerRewired.GetButtonDown("Collect")) {
                     player.Recolect (amount);
                     Destroy (gameObject);
                     SoundManager.Get.PlayClip (recolectSound, false);
