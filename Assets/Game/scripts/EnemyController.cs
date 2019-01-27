@@ -20,20 +20,29 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         Wandering();
+
+        speedModifier = runSpeed;
+    }
+
+    private void Update()
+    {
+        
     }
 
     private void FixedUpdate()
     {
-        direction.x = 1;
-        direction.z = 0;
+        direction.x = 0.5f;
+        direction.z = 0.5f;
+
+        print("hijueputa");
 
         // Follow camera forward axis as base direction
-        if (mainCam != null)
-        {
-            print("este codigo nunca se llama");
-            cameraFoward = Vector3.Scale(mainCam.transform.forward, new Vector3(1, 0, 1)).normalized;
-            direction = direction.z * cameraFoward + direction.x * mainCam.transform.right;
-        }
+        //if (mainCam != null)
+        //{
+        //    print("este codigo nunca se llama");
+        //    cameraFoward = Vector3.Scale(mainCam.transform.forward, new Vector3(1, 0, 1)).normalized;
+        //    direction = direction.z * cameraFoward + direction.x * mainCam.transform.right;
+        //}
 
         // If moving
         if (direction.x != 0 || direction.z != 0)
@@ -46,6 +55,8 @@ public class EnemyController : MonoBehaviour
 
         direction *= speedModifier;
         direction.y = rbody.velocity.y;
+
+        print(direction);
 
         rbody.velocity = direction;
     }
