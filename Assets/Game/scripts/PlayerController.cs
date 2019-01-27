@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour {
     private GameInputActions actions;
     public Camera mainCam;
 
+	bool walkingOnce = false;
+	
     [Header ("Data")]
     public bool isRunning;
     private float horizontal, vertical;
@@ -68,11 +70,36 @@ public class PlayerController : MonoBehaviour {
 
         // If moving
         if (direction.x != 0 || direction.z != 0) {
+		
+				//SoundManager.Get.PlayClip (starSound, true);
+				
+				// print("X  " + direction.x + "  Y  " + direction.y);
             // Rotate character
             aimAngle = Mathf.Atan2 (direction.x, direction.z) * Mathf.Rad2Deg;
             aimRotation = Quaternion.AngleAxis (aimAngle, Vector3.up);
             body.transform.rotation = Quaternion.Slerp (body.transform.rotation, aimRotation, turnSpeed * Time.deltaTime);
+			
         }
+		
+		var vel = GetComponent<Rigidbody>().velocity;      //to get a Vector3 representation of the velocity
+		float speed = vel.magnitude;             
+		
+		// print (speed);
+		
+        if (speed > 1  && !walkingOnce) {
+		
+			SoundManager.Get.PlayClip (starSound, true);
+			walkingOnce = true;
+			print("this is runnning");
+
+		} else if (speed < 1  && walkingOnce) {
+		
+			SoundManager.Get.StopClip (starSound);
+			walkingOnce = false;
+			print("this is ");
+
+		}
+
 
         direction *= speedModifier;
         direction.y = rbody.velocity.y;

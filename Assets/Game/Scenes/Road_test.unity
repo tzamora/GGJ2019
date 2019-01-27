@@ -136,8 +136,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429124722}
-  m_LocalRotation: {x: -0.108629376, y: -0.88413376, z: 0.2556272, w: -0.37571535}
-  m_LocalPosition: {x: -79.7077, y: 86.229, z: 90.345}
+  m_LocalRotation: {x: -0.10885319, y: -0.88393193, z: 0.25597975, w: -0.3758853}
+  m_LocalPosition: {x: -79.7077, y: 86.229, z: 88.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1954465124}
@@ -219,6 +219,7 @@ MonoBehaviour:
   - {fileID: 1667493980}
   - {fileID: 2112230621}
   amountPlayersInside: 2
+  reduceResourcesSpeed: 1
   rbody: {fileID: 0}
   isMoving: 0
   resources: 100
@@ -274,6 +275,7 @@ MonoBehaviour:
   - {fileID: 1667493980}
   - {fileID: 2112230621}
   amountPlayersInside: 2
+  reduceResourcesSpeed: 1
   rbody: {fileID: 0}
   isMoving: 0
   resources: 100
@@ -291,6 +293,97 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -1.3060001, y: 30.295002, z: -0.86100006}
+--- !u!1 &580444729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 580444733}
+  - component: {fileID: 580444732}
+  - component: {fileID: 580444731}
+  - component: {fileID: 580444730}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &580444730
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580444729}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &580444731
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580444729}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9cad805f5f9e83c43810c2c3d26c9cef, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &580444732
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580444729}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &580444733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580444729}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.2, y: -0.84, z: -7.92}
+  m_LocalScale: {x: 4, y: 1, z: 4}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &635054028
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +710,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 36
+  field of view: 50.03703
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -642,8 +735,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958278791}
-  m_LocalRotation: {x: -0.108629376, y: -0.88413376, z: 0.2556272, w: -0.37571535}
-  m_LocalPosition: {x: 8.6690445, y: 1.5879745, z: -2.1748123}
+  m_LocalRotation: {x: -0.10885319, y: -0.88393193, z: 0.25597975, w: -0.3758853}
+  m_LocalPosition: {x: 8.413811, y: 1.8363037, z: -3.413536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -708,6 +801,7 @@ MonoBehaviour:
   - {fileID: 1667493980}
   - {fileID: 2112230621}
   amountPlayersInside: 2
+  reduceResourcesSpeed: 1
   rbody: {fileID: 0}
   isMoving: 0
   resources: 100
@@ -1154,7 +1248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501063226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.292301, y: -0.781, z: 9.6449995}
+  m_LocalPosition: {x: 10.292301, y: -0.781, z: 8.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 779524462}
@@ -1377,6 +1471,7 @@ MonoBehaviour:
   - {fileID: 1667493980}
   - {fileID: 2112230621}
   amountPlayersInside: 2
+  reduceResourcesSpeed: 1
   rbody: {fileID: 0}
   isMoving: 0
   resources: 100
@@ -1451,6 +1546,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f7123d9c068f9940b530c6fad039ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Name: 
   m_EditorClassIdentifier: 
   m_Name: 
@@ -1568,7 +1673,7 @@ PrefabInstance:
     - target: {fileID: 4968685809587242743, guid: a5b0f05549293324fb38786f44a22ac9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.63
+      value: -6.58
       objectReference: {fileID: 0}
     - target: {fileID: 4968685809587242743, guid: a5b0f05549293324fb38786f44a22ac9,
         type: 3}
@@ -1812,6 +1917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointToGo: {fileID: 3102217048976598844}
+  invert: 0
 --- !u!1 &1954465123
 GameObject:
   m_ObjectHideFlags: 3
@@ -1956,6 +2062,7 @@ MonoBehaviour:
   - {fileID: 1667493980}
   - {fileID: 2112230621}
   amountPlayersInside: 2
+  reduceResourcesSpeed: 1
   rbody: {fileID: 0}
   isMoving: 0
   resources: 100
