@@ -1,8 +1,0 @@
-
-    To do
-
-
-    Car motion integration
-    Rooms integration
-    Minerales integration
-    Camera integrated

@@ -136,7 +136,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429124722}
-  m_LocalRotation: {x: 0.41614977, y: 0.0000000148839, z: -0.000000032521633, w: 0.90929615}
+  m_LocalRotation: {x: 0.41614977, y: 0.000000015771716, z: -0.00000003446152, w: 0.90929615}
   m_LocalPosition: {x: 0.8865, y: 11.86, z: 29.875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -440,6 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 2
   vehicle: {fileID: 0}
+  goodSound: {fileID: 0}
 --- !u!65 &951749287
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -611,7 +612,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958278791}
-  m_LocalRotation: {x: 0.41614977, y: 0.0000000148839, z: -0.000000032521633, w: 0.90929615}
+  m_LocalRotation: {x: 0.41614977, y: 0.000000015771716, z: -0.00000003446152, w: 0.90929615}
   m_LocalPosition: {x: 0.8865, y: 11.77086, z: 17.302322}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -787,6 +788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 3
   vehicle: {fileID: 0}
+  goodSound: {fileID: 0}
 --- !u!65 &1140350578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1079,6 +1081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointToGo: {fileID: 3102217048976598844}
+  invert: 0
 --- !u!64 &1490088462
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1239,6 +1242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 1
   vehicle: {fileID: 0}
+  goodSound: {fileID: 0}
 --- !u!65 &1598828405
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1766,6 +1770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 0
   vehicle: {fileID: 0}
+  goodSound: {fileID: 0}
 --- !u!65 &2136513580
 BoxCollider:
   m_ObjectHideFlags: 0
